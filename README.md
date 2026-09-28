@@ -37,18 +37,7 @@ The dataset is managed in a **two-tier architecture**:
 
 ---
 
-## 2. Research Team Roles
-
-| Role | Focus Area | Responsibilities |
-| :--- | :--- | :--- |
-| **Person 1** | **Dataset & Frame Extraction** | Validate ~300 trimmed videos, generate `metadata.csv`, extract sequential frames, verify frame counts, produce visual quality samples, and document dataset statistics. |
-| **Person 2** | **Dlib Landmark Detection** | Implement Dlib 68 facial landmark detector, isolate mouth landmarks (48–67), test mouth bounding boxes, evaluate across speakers/digits, and document failure cases. |
-| **Person 3** | **MediaPipe Detection** | Implement MediaPipe Face Mesh detector, isolate lip contour points, test mouth bounding boxes, evaluate across speakers/digits, and document failure cases. |
-| **Person 4** | **Integration & ML Preparation** | Create common interface for Dlib/MediaPipe, define standard preprocessing (ROI crop, resize, normalize, temporal pad), enforce speaker-independent splits, and format tensors for CNN + BiLSTM. |
-
----
-
-## 3. Strict Git Governance Rules
+## 2. Strict Git Governance Rules
 
 > **CRITICAL GITHUB RULES**:
 > - **The 300 trimmed MP4 videos must NEVER be placed in the GitHub repository.**
@@ -58,7 +47,7 @@ The dataset is managed in a **two-tier architecture**:
 
 ---
 
-## 4. Directory Structure
+## 3. Directory Structure
 
 ```
 tai-phake-visual-speech/
@@ -111,7 +100,7 @@ tai-phake-visual-speech/
 
 ---
 
-## 5. Python Environment Setup with UV (Python 3.12)
+## 4. Python Environment Setup with UV (Python 3.12)
 
 This project uses [uv](https://github.com/astral-sh/uv) to manage Python and virtual environments for speed and reliability. Python **3.12** is used to ensure maximum library compatibility.
 
