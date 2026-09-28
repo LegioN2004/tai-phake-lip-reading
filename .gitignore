@@ -1,0 +1,96 @@
+# ==============================================================================
+# Tai Phake Visual Speech Recognition (VSR) - .gitignore
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Dataset & Media Files (NEVER track in Git - trimmed videos stay local/Drive)
+# ------------------------------------------------------------------------------
+# Video formats
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.flv
+*.wmv
+*.m4v
+
+# Audio formats
+*.wav
+*.mp3
+*.aac
+*.flac
+*.m4a
+
+# Local dataset storage directories
+data/digit/*
+!data/digit/.gitkeep
+data/trimmed/*
+!data/trimmed/.gitkeep
+data/frames/*
+!data/frames/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# ------------------------------------------------------------------------------
+# 2. Model Weights & Checkpoints (Heavy binary files)
+# ------------------------------------------------------------------------------
+*.h5
+*.keras
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.tflite
+*.pb
+models/*
+!models/.gitkeep
+
+# ------------------------------------------------------------------------------
+# 3. Python Cache & Environment (Managed via UV / Python 3.12)
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# 4. Jupyter Notebook Checkpoints
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ------------------------------------------------------------------------------
+# 5. OS and IDE Artifacts
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini

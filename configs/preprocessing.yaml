@@ -1,0 +1,64 @@
+# ==============================================================================
+# Tai Phake Visual Speech Recognition (VSR)
+# Configuration for Video Validation, Frame Extraction & Preprocessing Pipeline
+# ==============================================================================
+
+project:
+  name: "tai-phake-visual-speech"
+  version: "0.1.0"
+  description: "Visual Speech Recognition for Tai Phake digits (d0-d9)"
+
+# Storage paths (local data directories are ignored by Git)
+paths:
+  # Master original recordings stay in Google Drive (not stored locally)
+  trimmed_dir: "data/digit"          # Local working copy of trimmed digit videos (extracted from Drive zip)
+  frames_dir: "data/frames"          # Extracted image frames
+  processed_dir: "data/processed"    # Preprocessed mouth crops & tensors
+  metadata_csv: "data/metadata.csv"  # Master dataset metadata (tracked in Git)
+  results_dir: "results"
+  models_dir: "models"
+
+# Dataset Ground Truth
+dataset:
+  num_speakers: 30
+  digit_classes: ["d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10"]
+  expected_videos: 330
+  supported_extensions: [".mp4", ".avi", ".mov", ".mkv", ".webm"]
+
+# Person 1: Video Validation & Extraction
+data_preparation:
+  min_duration_sec: 0.3
+  max_duration_sec: 15.0
+  frame_format: "png"
+  zero_padding: 4
+  skip_existing: true
+
+# Person 2: Dlib Landmark Configuration
+dlib:
+  predictor_path: "models/shape_predictor_68_face_landmarks.dat"
+  mouth_indices: [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67]
+  upsample_times: 1
+
+# Person 3: MediaPipe Face Mesh Configuration
+mediapipe:
+  max_num_faces: 1
+  refine_landmarks: true
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+
+# Person 4: ROI Cropping, Normalization & Tensor Preparation
+preprocessing:
+  crop_size: [96, 96]
+  crop_padding: 0.2
+  to_grayscale: true
+  sequence_length: 30
+  pad_mode: "edge"
+  normalization:
+    mean: 0.421
+    std: 0.165
+
+# Speaker-Independent Split Configuration
+splits:
+  train_speakers: 20
+  val_speakers: 5
+  test_speakers: 5
