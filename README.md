@@ -23,14 +23,14 @@ The dataset is managed in a **two-tier architecture**:
 - **Never committed to GitHub** (strictly excluded by `.gitignore`).
 
 ### Tai Phake Vocabulary (11 Digits)
-- `d0`: **Sun** (Zero)
+- `d0`: **Pau** (Zero)
 - `d1`: **Nung** (One)
-- `d2`: **Song** (Two)
+- `d2`: **Saung** (Two)
 - `d3`: **Sam** (Three)
 - `d4`: **Si** (Four)
 - `d5`: **Ha** (Five)
 - `d6`: **Hok** (Six)
-- `d7`: **Jet** (Seven)
+- `d7`: **Chit** (Seven)
 - `d8`: **Pet** (Eight)
 - `d9`: **Kao** (Nine)
 - `d10`: **Sip** (Ten)
