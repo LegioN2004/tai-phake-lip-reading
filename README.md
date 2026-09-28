@@ -19,7 +19,7 @@ The dataset is managed in a **two-tier architecture**:
 ### 2. Trimmed Digit Videos (Local Working Dataset in `data/trimmed/`)
 - Approximately 330 segmented/trimmed MP4 video files (30 speakers × 11 digits).
 - Each video contains **one speaker saying one Tai Phake digit** (`d0` to `d10`).
-- Downloaded/copied locally into `data/trimmed/` for dataset validation and frame extraction.
+- Downloaded/copied locally into `data/digit/` for dataset validation and frame extraction.
 - **Never committed to GitHub** (strictly excluded by `.gitignore`).
 
 ### Tai Phake Vocabulary (11 Digits)
@@ -64,7 +64,7 @@ The dataset is managed in a **two-tier architecture**:
 tai-phake-visual-speech/
 ├── README.md
 ├── data/
-│   ├── trimmed/                       # [Local only] ~300 trimmed digit videos (s1..s30 / d0..d9)
+│   ├── digit/                       # [Local only] ~300 trimmed digit videos (s1..s30 / d0..d9)
 │   ├── frames/                        # [Local only] Extracted video frames (.png)
 │   ├── processed/                     # [Local only] Preprocessed mouth ROI tensors
 │   ├── metadata.csv                   # Master dataset metadata (tracked in Git)
