@@ -4,7 +4,7 @@
 > - The **original full raw recordings** remain safely stored **ONLY in Google Drive / institutional cloud storage** to preserve laptop disk space. They are NOT downloaded locally.
 > - The **~330 trimmed digit videos** stored in `data/digit/` are our local working copy.
 > - **NEVER commit video files or frame images to GitHub.**
-> - The directories `data/digit/`, `data/trimmed/`, `data/frames/`, and `data/processed/` are local-only and strictly ignored by `.gitignore`.
+> - The directories `data/digit/`, `data/frames/`, and `data/processed/` are local-only and strictly ignored by `.gitignore`.
 
 ---
 
@@ -45,12 +45,12 @@ data/
 ## 3. Storage Protocol & Data Integrity Rules
 
 1. **Trimmed Video Immutability**:
-   - The trimmed videos in `data/trimmed/` must **never be modified, renamed, moved, compressed, or overwritten**.
+   - The trimmed videos in `data/digit/` must **never be modified, renamed, moved, compressed, or overwritten**.
    - All validation and frame extraction scripts access these videos in **strictly read-only mode**.
 
 2. **Git Version Control**:
    - Only `metadata.csv` and `README.md` are tracked by Git.
-   - `data/trimmed/*`, `data/frames/*`, and `data/processed/*` are ignored by `.gitignore`.
+   - `data/digit/*`, `data/frames/*`, and `data/processed/*` are ignored by `.gitignore`.
 
 3. **`metadata.csv` Schema**:
    - `video_id`: Unique utterance identifier (e.g., `s01_d0`)
