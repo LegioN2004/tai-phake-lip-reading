@@ -16,7 +16,7 @@ The dataset is managed in a **two-tier architecture**:
 - **Not downloaded locally** to preserve laptop disk storage.
 - Must remain untouched.
 
-### 2. Trimmed Digit Videos (Local Working Dataset in `data/trimmed/`)
+### 2. Trimmed Digit Videos (Local Working Dataset in `data/digit/`)
 - Approximately 330 segmented/trimmed MP4 video files (30 speakers × 11 digits).
 - Each video contains **one speaker saying one Tai Phake digit** (`d0` to `d10`).
 - Downloaded/copied locally into `data/digit/` for dataset validation and frame extraction.
@@ -41,7 +41,7 @@ The dataset is managed in a **two-tier architecture**:
 
 > **CRITICAL GITHUB RULES**:
 > - **The 300 trimmed MP4 videos must NEVER be placed in the GitHub repository.**
-> - The directories `data/trimmed/`, `data/frames/`, and `data/processed/` are local-only and ignored by `.gitignore`.
+> - The directories `data/digit/`, `data/frames/`, and `data/processed/` are local-only and ignored by `.gitignore`.
 > - Model checkpoints and weights (`*.h5`, `*.keras`, `*.pth`, `*.pt`, `*.ckpt`) are excluded from Git.
 > - GitHub tracks source code, notebooks, configurations, documentation, and small metadata files (`data/metadata.csv`).
 
