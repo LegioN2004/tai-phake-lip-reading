@@ -4,8 +4,8 @@
 > - The **original full raw recordings** remain safely stored **ONLY in Google Drive / institutional cloud storage** to preserve laptop disk space. They are NOT downloaded locally.
 > - The **~330 trimmed digit videos** stored in `data/digit/` are our local working copy.
 > - **Extracted frames are generated directly inside each digit folder** (e.g. `data/digit/s1/d0/frame_0001.jpg`), eliminating the need for a separate frames directory.
-> - **NEVER commit video files or frame images to GitHub.**
-> - The directories `data/digit/` and `data/processed/` are local-only and strictly ignored by `.gitignore`.
+> - **Extracted image frames (`*.jpg`) in `data/digit/` are tracked by Git.**
+> - **Video files (`*.mp4`, `*.avi`, etc.) and `data/processed/` are strictly ignored by `.gitignore`.**
 
 ---
 
@@ -56,8 +56,8 @@ data/
    - All validation and frame extraction scripts access these videos in **strictly read-only mode**.
 
 2. **Git Version Control**:
-   - Only `metadata.csv` and `README.md` are tracked by Git.
-   - `data/digit/*` and `data/processed/*` are ignored by `.gitignore`.
+   - `metadata.csv`, `README.md`, and extracted image frames (`*.jpg`) in `data/digit/` are tracked by Git.
+   - All video files (`*.mp4`, etc.) and `data/processed/*` are strictly ignored by `.gitignore`.
 
 3. **`metadata.csv` Schema**:
    - `video_id`: Unique utterance identifier (e.g., `s01_d0`)

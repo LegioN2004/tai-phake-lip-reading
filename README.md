@@ -40,10 +40,11 @@ The dataset is managed in a **two-tier architecture**:
 ## 2. Strict Git Governance Rules
 
 > **CRITICAL GITHUB RULES**:
-> - **The trimmed MP4 videos and extracted frames must NEVER be placed in the GitHub repository.**
-> - The directories `data/digit/` and `data/processed/` are local-only and ignored by `.gitignore`.
+> - **The original and trimmed MP4 video files must NEVER be placed in the GitHub repository** (strictly ignored by `.gitignore`).
+> - **Extracted sequential image frames (`*.jpg`) in `data/digit/` ARE tracked and version-controlled by Git.**
+> - The directory `data/processed/` (preprocessed tensors) is local-only and ignored by `.gitignore`.
 > - Model checkpoints and weights (`*.h5`, `*.keras`, `*.pth`, `*.pt`, `*.ckpt`) are excluded from Git.
-> - GitHub tracks source code, notebooks, configurations, documentation, and small metadata files (`data/metadata.csv`).
+> - GitHub tracks source code, notebooks, configurations, documentation, metadata files (`data/metadata.csv`), and extracted frame images.
 
 ---
 
@@ -53,9 +54,9 @@ The dataset is managed in a **two-tier architecture**:
 tai-phake-visual-speech/
 ├── README.md
 ├── data/
-│   ├── digit/                         # [Local only] 30 speakers (s1..s30) × 11 digits (d0..d10)
+│   ├── digit/                         # 30 speakers (s1..s30) × 11 digits (d0..d10) [Frames tracked in Git; MP4 videos local-only]
 │   │   ├── s1/
-│   │   │   ├── d0/                    # Contains d0.mp4 and in-situ extracted frames
+│   │   │   ├── d0/                    # Contains d0.mp4 (local) and in-situ extracted frames (tracked)
 │   │   │   └── ...
 │   │   └── ...
 │   ├── processed/                     # [Local only] Preprocessed mouth ROI tensors
