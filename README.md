@@ -16,39 +16,28 @@ The dataset is managed in a **two-tier architecture**:
 - **Not downloaded locally** to preserve laptop disk storage.
 - Must remain untouched.
 
-### 2. Trimmed Digit Videos (Local Working Dataset in `data/trimmed/`)
+### 2. Trimmed Digit Videos (Local Working Dataset in `data/digit/`)
 - Approximately 330 segmented/trimmed MP4 video files (30 speakers × 11 digits).
 - Each video contains **one speaker saying one Tai Phake digit** (`d0` to `d10`).
-- Downloaded/copied locally into `data/trimmed/` for dataset validation and frame extraction.
+- Downloaded/copied locally into `data/digit/` for dataset validation and frame extraction.
 - **Never committed to GitHub** (strictly excluded by `.gitignore`).
 
 ### Tai Phake Vocabulary (11 Digits)
-- `d0`: **Sun** (Zero)
+- `d0`: **Pau** (Zero)
 - `d1`: **Nung** (One)
-- `d2`: **Song** (Two)
+- `d2`: **Saung** (Two)
 - `d3`: **Sam** (Three)
 - `d4`: **Si** (Four)
 - `d5`: **Ha** (Five)
 - `d6`: **Hok** (Six)
-- `d7`: **Jet** (Seven)
+- `d7`: **Chit** (Seven)
 - `d8`: **Pet** (Eight)
 - `d9`: **Kao** (Nine)
 - `d10`: **Sip** (Ten)
 
 ---
 
-## 2. Research Team Roles
-
-| Role | Focus Area | Responsibilities |
-| :--- | :--- | :--- |
-| **Person 1** | **Dataset & Frame Extraction** | Validate ~300 trimmed videos, generate `metadata.csv`, extract sequential frames, verify frame counts, produce visual quality samples, and document dataset statistics. |
-| **Person 2** | **Dlib Landmark Detection** | Implement Dlib 68 facial landmark detector, isolate mouth landmarks (48–67), test mouth bounding boxes, evaluate across speakers/digits, and document failure cases. |
-| **Person 3** | **MediaPipe Detection** | Implement MediaPipe Face Mesh detector, isolate lip contour points, test mouth bounding boxes, evaluate across speakers/digits, and document failure cases. |
-| **Person 4** | **Integration & ML Preparation** | Create common interface for Dlib/MediaPipe, define standard preprocessing (ROI crop, resize, normalize, temporal pad), enforce speaker-independent splits, and format tensors for CNN + BiLSTM. |
-
----
-
-## 3. Strict Git Governance Rules
+## 2. Strict Git Governance Rules
 
 > **CRITICAL GITHUB RULES**:
 > - **The trimmed MP4 videos and extracted frames must NEVER be placed in the GitHub repository.**
@@ -58,17 +47,22 @@ The dataset is managed in a **two-tier architecture**:
 
 ---
 
-## 4. Directory Structure
+## 3. Directory Structure
 
 ```
 tai-phake-visual-speech/
 ├── README.md
 ├── data/
+<<<<<<< HEAD
 │   ├── digit/                         # [Local only] 30 speakers (s1..s30) × 11 digits (d0..d10)
 │   │   ├── s1/
 │   │   │   ├── d0/                    # Contains d0.mp4 and in-situ extracted frames
 │   │   │   └── ...
 │   │   └── ...
+=======
+│   ├── digit/                       # [Local only] ~300 trimmed digit videos (s1..s30 / d0..d9)
+│   ├── frames/                        # [Local only] Extracted video frames (.png)
+>>>>>>> origin/main
 │   ├── processed/                     # [Local only] Preprocessed mouth ROI tensors
 │   ├── metadata.csv                   # Master dataset metadata (tracked in Git)
 │   └── README.md                      # Data guidelines and schema description
@@ -114,7 +108,7 @@ tai-phake-visual-speech/
 
 ---
 
-## 5. Python Environment Setup with UV (Python 3.12)
+## 4. Python Environment Setup with UV (Python 3.12)
 
 This project uses [uv](https://github.com/astral-sh/uv) to manage Python and virtual environments for speed and reliability. Python **3.12** is used to ensure maximum library compatibility.
 

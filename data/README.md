@@ -64,7 +64,7 @@ data/
    - `speaker_id`: Speaker identifier (`s1` / `s01` to `s30`)
    - `digit`: Digit code (`d0` to `d10`)
    - `digit_label`: Integer index (0 to 10)
-   - `tai_phake_word`: Spoken phonetic word (e.g. `Sun`, `Nung`, `Song`, ..., `Sip`)
+   - `tai_phake_word`: Spoken phonetic word (e.g. `Pau`, `Nung`, `Saung`, ..., `Sip`)
    - `file_name`: Original video filename
    - `relative_path`: Path relative to `data/digit/`
    - `duration_sec`: Video duration in seconds
