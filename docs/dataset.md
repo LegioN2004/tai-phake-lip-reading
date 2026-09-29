@@ -3,16 +3,16 @@
 ## Overview
 This document outlines the visual speech dataset collected for recognizing spoken Tai Phake digits.
 
-- **Language**: Tai Phake (endangered Tai-Kadai language spoken in Assam and Arunachal Pradesh, Northeast India)
+- **Language**: Tai Phake (endangered Tai-Phake language spoken in Assam and Arunachal Pradesh, Northeast India)
 - **Vocabulary**: 11 digits (`d0` to `d10`):
-  - `d0`: **Sun** (Zero)
+  - `d0`: **Pau** (Zero)
   - `d1`: **Nung** (One)
-  - `d2`: **Song** (Two)
+  - `d2`: **Saung** (Two)
   - `d3`: **Sam** (Three)
   - `d4`: **Si** (Four)
   - `d5`: **Ha** (Five)
   - `d6`: **Hok** (Six)
-  - `d7`: **Jet** (Seven)
+  - `d7`: **Chit** (Seven)
   - `d8`: **Pet** (Eight)
   - `d9`: **Kao** (Nine)
   - `d10`: **Sip** (Ten)

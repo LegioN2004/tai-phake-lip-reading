@@ -53,16 +53,11 @@ The dataset is managed in a **two-tier architecture**:
 tai-phake-visual-speech/
 ├── README.md
 ├── data/
-<<<<<<< HEAD
 │   ├── digit/                         # [Local only] 30 speakers (s1..s30) × 11 digits (d0..d10)
 │   │   ├── s1/
 │   │   │   ├── d0/                    # Contains d0.mp4 and in-situ extracted frames
 │   │   │   └── ...
 │   │   └── ...
-=======
-│   ├── digit/                       # [Local only] ~300 trimmed digit videos (s1..s30 / d0..d9)
-│   ├── frames/                        # [Local only] Extracted video frames (.png)
->>>>>>> origin/main
 │   ├── processed/                     # [Local only] Preprocessed mouth ROI tensors
 │   ├── metadata.csv                   # Master dataset metadata (tracked in Git)
 │   └── README.md                      # Data guidelines and schema description
@@ -71,22 +66,6 @@ tai-phake-visual-speech/
 │   ├── 02_dlib_experiment.ipynb       # Person 2: Dlib 68-landmark experiments
 │   ├── 03_mediapipe_experiment.ipynb  # Person 3: MediaPipe Face Mesh experiments
 │   └── 04_preprocessing_pipeline.ipynb# Person 4: Integration, cropping & normalization
-├── src/
-│   ├── __init__.py
-│   ├── data/
-│   │   ├── __init__.py
-│   │   ├── validate_videos.py         # Video decodability & integrity checks
-│   │   └── extract_frames.py          # Lossless frame extraction
-│   ├── preprocessing/
-│   │   ├── __init__.py
-│   │   ├── dlib_detector.py           # Dlib mouth landmark extractor
-│   │   ├── mediapipe_detector.py      # MediaPipe mouth landmark extractor
-│   │   ├── crop.py                    # Mouth ROI bounding box calculation & cropping
-│   │   └── normalize.py               # Grayscale conversion & pixel normalization
-│   └── dataset/
-│       ├── __init__.py
-│       ├── build_dataset.py           # Assembly of sequences into model tensors
-│       └── split_dataset.py           # Speaker-independent train/val/test splits
 ├── configs/
 │   └── preprocessing.yaml             # Central pipeline and model configuration
 ├── results/
