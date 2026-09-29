@@ -63,11 +63,10 @@ tai-phake-visual-speech/
 │   ├── metadata.csv                   # Master dataset metadata (tracked in Git)
 │   └── README.md                      # Data guidelines and schema description
 ├── notebooks/
-│   ├── 01_dataset_analysis.ipynb      # Person 1: Dataset exploration & validation
+│   ├── 01_frame_extraction.ipynb      # Person 1: In-situ sequential frame extraction & analysis
 │   ├── 02_dlib_experiment.ipynb       # Person 2: Dlib 68-landmark experiments
 │   ├── 03_mediapipe_experiment.ipynb  # Person 3: MediaPipe Face Mesh experiments
 │   └── 04_preprocessing_pipeline.ipynb# Person 4: Integration, cropping & normalization
-├── extract_frames.py                  # Person 1: In-situ sequential frame extraction
 ├── validate_videos.py                 # Person 1: Video decodability & metadata generator
 ├── configs/
 │   └── preprocessing.yaml             # Central pipeline and model configuration
@@ -117,25 +116,7 @@ Validates integrity and decodability of all videos and updates `data/metadata.cs
 uv run python validate_videos.py
 ```
 
-### 4. Frame Extraction (Person 1 Pipeline)
+### 4. Frame Extraction Pipeline
 Extracted frames are saved in-situ alongside the source video (`data/digit/<speaker>/<digit>/frame_XXXX.jpg`).
-
-```bash
-# 1. Dry run (verifies decodability without writing files to disk)
-uv run python extract_frames.py --dry-run
-
-# 2. Extract single speaker/digit for testing
-uv run python extract_frames.py --speaker s1 --digit d0
-
-# 3. Full extraction across all 30 speakers and 11 digits
-uv run python extract_frames.py
-
-# 4. Configurable extraction: extract every 2nd frame (reduce dataset size)
-uv run python extract_frames.py --step 2
-
-# 5. Configurable extraction: sample at fixed target FPS (e.g. 15 FPS)
-uv run python extract_frames.py --target-fps 15.0
-
-# 6. Re-extract and overwrite existing frames
-uv run python extract_frames.py --overwrite
-```
+The frame extraction, decodability checks, visual sample inspection, and dataset distribution analysis are executed via:
+- **Notebook**: [`notebooks/01_frame_extraction.ipynb`](notebooks/01_frame_extraction.ipynb)
