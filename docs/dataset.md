@@ -32,16 +32,20 @@ This document outlines the visual speech dataset collected for recognizing spoke
 ### Tier 2: Trimmed Digit Videos & In-Situ Frames (Local in `data/digit/`)
 - Approximately 330 trimmed/segmented MP4 video files across 30 speakers × 11 digits (`d0`–`d10`).
 - Each video contains one speaker uttering one digit.
-- Extracted frames are stored directly inside each respective digit subfolder (`data/digit/<speaker>/<digit>/frame_XXXX.png`).
+- Extracted frames are stored directly inside each respective digit subfolder (`data/digit/<speaker>/<digit>/frame_XXXX.jpg`).
 - Organized as:
   ```
   data/digit/
   ├── s1/
   │   ├── d0/
   │   │   ├── d0.mp4
-  │   │   ├── frame_0001.png
+  │   │   ├── frame_0001.jpg
+  │   │   ├── frame_0002.jpg
   │   │   └── ...
   │   ├── d1/
+  │   │   ├── d1.mp4
+  │   │   ├── frame_0001.jpg
+  │   │   └── ...
   │   └── ...d10/
   ├── s2/
   └── ...
@@ -59,5 +63,5 @@ This document outlines the visual speech dataset collected for recognizing spoke
    - `data/metadata.csv`: Master metadata table capturing video IDs, speakers, digits, duration, frame counts, and validation status.
    - `data/README.md`: Directory rules and schema.
 3. **Data Immutability Guarantee**:
-   - Trimmed videos in `data/trimmed/` are treated as read-only.
+   - Trimmed videos in `data/digit/` are treated as read-only.
    - Pipeline scripts never modify, rename, compress, or overwrite video files.

@@ -41,7 +41,7 @@ The dataset is managed in a **two-tier architecture**:
 
 > **CRITICAL GITHUB RULES**:
 > - **The trimmed MP4 videos and extracted frames must NEVER be placed in the GitHub repository.**
-> - The directories `data/digit/`, `data/trimmed/`, and `data/processed/` are local-only and ignored by `.gitignore`.
+> - The directories `data/digit/` and `data/processed/` are local-only and ignored by `.gitignore`.
 > - Model checkpoints and weights (`*.h5`, `*.keras`, `*.pth`, `*.pt`, `*.ckpt`) are excluded from Git.
 > - GitHub tracks source code, notebooks, configurations, documentation, and small metadata files (`data/metadata.csv`).
 
@@ -66,6 +66,8 @@ tai-phake-visual-speech/
 │   ├── 02_dlib_experiment.ipynb       # Person 2: Dlib 68-landmark experiments
 │   ├── 03_mediapipe_experiment.ipynb  # Person 3: MediaPipe Face Mesh experiments
 │   └── 04_preprocessing_pipeline.ipynb# Person 4: Integration, cropping & normalization
+├── extract_frames.py                  # Person 1: In-situ sequential frame extraction
+├── validate_videos.py                 # Person 1: Video decodability & metadata generator
 ├── configs/
 │   └── preprocessing.yaml             # Central pipeline and model configuration
 ├── results/
@@ -108,7 +110,31 @@ source .venv/bin/activate
 uv pip install -r requirements.txt
 ```
 
-### 3. Run Commands Directly with UV
+### 3. Video Validation & Metadata Generation
+Validates integrity and decodability of all videos and updates `data/metadata.csv`:
 ```bash
-uv run python src/data/validate_videos.py
+uv run python validate_videos.py
+```
+
+### 4. Frame Extraction (Person 1 Pipeline)
+Extracted frames are saved in-situ alongside the source video (`data/digit/<speaker>/<digit>/frame_XXXX.jpg`).
+
+```bash
+# 1. Dry run (verifies decodability without writing files to disk)
+uv run python extract_frames.py --dry-run
+
+# 2. Extract single speaker/digit for testing
+uv run python extract_frames.py --speaker s1 --digit d0
+
+# 3. Full extraction across all 30 speakers and 11 digits
+uv run python extract_frames.py
+
+# 4. Configurable extraction: extract every 2nd frame (reduce dataset size)
+uv run python extract_frames.py --step 2
+
+# 5. Configurable extraction: sample at fixed target FPS (e.g. 15 FPS)
+uv run python extract_frames.py --target-fps 15.0
+
+# 6. Re-extract and overwrite existing frames
+uv run python extract_frames.py --overwrite
 ```

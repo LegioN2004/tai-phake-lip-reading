@@ -6,7 +6,7 @@
 project:
   name: "tai-phake-visual-speech"
   version: "0.1.0"
-  description: "Visual Speech Recognition for Tai Phake digits (d0-d9)"
+  description: "Visual Speech Recognition for Tai Phake digits (d0-d10)"
 
 # Storage paths (local data directories are ignored by Git)
 paths:
@@ -28,7 +28,7 @@ dataset:
 data_preparation:
   min_duration_sec: 0.3
   max_duration_sec: 15.0
-  frame_format: "png"
+  frame_format: "jpg"
   zero_padding: 4
   skip_existing: true
 

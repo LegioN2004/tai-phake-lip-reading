@@ -3,9 +3,9 @@
 > **IMPORTANT**:
 > - The **original full raw recordings** remain safely stored **ONLY in Google Drive / institutional cloud storage** to preserve laptop disk space. They are NOT downloaded locally.
 > - The **~330 trimmed digit videos** stored in `data/digit/` are our local working copy.
-> - **Extracted frames are generated directly inside each digit folder** (e.g. `data/digit/s1/d0/frame_0001.png`), eliminating the need for a separate frames directory.
+> - **Extracted frames are generated directly inside each digit folder** (e.g. `data/digit/s1/d0/frame_0001.jpg`), eliminating the need for a separate frames directory.
 > - **NEVER commit video files or frame images to GitHub.**
-> - The directories `data/digit/`, `data/trimmed/`, and `data/processed/` are local-only and strictly ignored by `.gitignore`.
+> - The directories `data/digit/` and `data/processed/` are local-only and strictly ignored by `.gitignore`.
 
 ---
 
@@ -32,8 +32,8 @@ data/
 │   ├── s1/
 │   │   ├── d0/
 │   │   │   ├── d0.mp4           # Trimmed video clip
-│   │   │   ├── frame_0001.png   # In-situ extracted frames
-│   │   │   ├── frame_0002.png
+│   │   │   ├── frame_0001.jpg   # In-situ extracted frames
+│   │   │   ├── frame_0002.jpg
 │   │   │   └── ...
 │   │   ├── d1/
 │   │   │   ├── d1.mp4
@@ -57,7 +57,7 @@ data/
 
 2. **Git Version Control**:
    - Only `metadata.csv` and `README.md` are tracked by Git.
-   - `data/digit/*`, `data/trimmed/*`, and `data/processed/*` are ignored by `.gitignore`.
+   - `data/digit/*` and `data/processed/*` are ignored by `.gitignore`.
 
 3. **`metadata.csv` Schema**:
    - `video_id`: Unique utterance identifier (e.g., `s01_d0`)
