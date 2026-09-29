@@ -51,8 +51,8 @@ The dataset is managed in a **two-tier architecture**:
 ## 3. Strict Git Governance Rules
 
 > **CRITICAL GITHUB RULES**:
-> - **The 300 trimmed MP4 videos must NEVER be placed in the GitHub repository.**
-> - The directories `data/trimmed/`, `data/frames/`, and `data/processed/` are local-only and ignored by `.gitignore`.
+> - **The trimmed MP4 videos and extracted frames must NEVER be placed in the GitHub repository.**
+> - The directories `data/digit/`, `data/trimmed/`, and `data/processed/` are local-only and ignored by `.gitignore`.
 > - Model checkpoints and weights (`*.h5`, `*.keras`, `*.pth`, `*.pt`, `*.ckpt`) are excluded from Git.
 > - GitHub tracks source code, notebooks, configurations, documentation, and small metadata files (`data/metadata.csv`).
 
@@ -64,8 +64,11 @@ The dataset is managed in a **two-tier architecture**:
 tai-phake-visual-speech/
 ├── README.md
 ├── data/
-│   ├── trimmed/                       # [Local only] ~300 trimmed digit videos (s1..s30 / d0..d9)
-│   ├── frames/                        # [Local only] Extracted video frames (.png)
+│   ├── digit/                         # [Local only] 30 speakers (s1..s30) × 11 digits (d0..d10)
+│   │   ├── s1/
+│   │   │   ├── d0/                    # Contains d0.mp4 and in-situ extracted frames
+│   │   │   └── ...
+│   │   └── ...
 │   ├── processed/                     # [Local only] Preprocessed mouth ROI tensors
 │   ├── metadata.csv                   # Master dataset metadata (tracked in Git)
 │   └── README.md                      # Data guidelines and schema description

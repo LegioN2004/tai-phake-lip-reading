@@ -29,29 +29,31 @@ This document outlines the visual speech dataset collected for recognizing spoke
 - To prevent laptop storage exhaustion, these original raw recordings are **NOT downloaded or stored locally**.
 - They remain permanently untouched.
 
-### Tier 2: Trimmed Digit Videos (Local Working Copy in `data/trimmed/`)
-- Approximately 300 trimmed/segmented MP4 video files.
+### Tier 2: Trimmed Digit Videos & In-Situ Frames (Local in `data/digit/`)
+- Approximately 330 trimmed/segmented MP4 video files across 30 speakers × 11 digits (`d0`–`d10`).
 - Each video contains one speaker uttering one digit.
-- Organized approximately as:
+- Extracted frames are stored directly inside each respective digit subfolder (`data/digit/<speaker>/<digit>/frame_XXXX.png`).
+- Organized as:
   ```
-  data/trimmed/
+  data/digit/
   ├── s1/
-  │   ├── d0/d0.mp4
-  │   ├── d1/d1.mp4
-  │   └── ...
+  │   ├── d0/
+  │   │   ├── d0.mp4
+  │   │   ├── frame_0001.png
+  │   │   └── ...
+  │   ├── d1/
+  │   └── ...d10/
   ├── s2/
   └── ...
   └── s30/
   ```
-- Downloaded/copied locally for Person 1's validation and frame extraction work.
 
 ---
 
 ## Data Management & Git Governance
 
 1. **Local Working Directories (Ignored by Git)**:
-   - `data/trimmed/`: Working copy of ~300 trimmed videos.
-   - `data/frames/`: Extracted visual frames.
+   - `data/digit/`: Working copy of ~330 trimmed videos and in-situ extracted frames.
    - `data/processed/`: Cropped mouth sequences and model tensors.
 2. **Tracked Files (Committed to Git)**:
    - `data/metadata.csv`: Master metadata table capturing video IDs, speakers, digits, duration, frame counts, and validation status.

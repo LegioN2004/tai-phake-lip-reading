@@ -11,8 +11,7 @@ project:
 # Storage paths (local data directories are ignored by Git)
 paths:
   # Master original recordings stay in Google Drive (not stored locally)
-  trimmed_dir: "data/digit"          # Local working copy of trimmed digit videos (extracted from Drive zip)
-  frames_dir: "data/frames"          # Extracted image frames
+  trimmed_dir: "data/digit"          # Working dataset: videos and extracted frames reside in sX/dY/
   processed_dir: "data/processed"    # Preprocessed mouth crops & tensors
   metadata_csv: "data/metadata.csv"  # Master dataset metadata (tracked in Git)
   results_dir: "results"

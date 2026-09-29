@@ -22,13 +22,11 @@
 *.flac
 *.m4a
 
-# Local dataset storage directories
+# Local dataset storage directories (videos and in-situ extracted frames)
 data/digit/*
 !data/digit/.gitkeep
 data/trimmed/*
 !data/trimmed/.gitkeep
-data/frames/*
-!data/frames/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
 

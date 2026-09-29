@@ -5,7 +5,7 @@
 The preprocessing pipeline prepares raw visual speech frames for spatial-temporal deep learning models (CNN + BiLSTM).
 
 ```
-Raw Frames (from data/frames/)
+Frames (from data/digit/<speaker>/<digit>/)
        │
        ▼
 Face Landmark Detection (Dlib / MediaPipe)
