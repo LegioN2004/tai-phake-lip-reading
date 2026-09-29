@@ -1,13 +1,3 @@
-"""
-Tai Phake Visual Speech Recognition (VSR)
-Video Validation Script - Person 1 Task
-
-Validates trimmed MP4 video files in `data/digit/` in read-only mode:
-- Checks file integrity, decodability, duration, resolution, and fps
-- Populates/updates data/metadata.csv
-- Flags corrupted or truncated files
-"""
-
 import argparse
 import csv
 import logging
