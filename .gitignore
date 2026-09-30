@@ -90,3 +90,14 @@ venv.bak/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Ignore all data contents by default
+data/*
+
+# Keep the metadata and documentation
+!data/metadata.csv
+!data/README.md
+
+# Keep directory placeholders
+!data/**/
+!data/**/.gitkeep
