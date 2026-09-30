@@ -101,3 +101,7 @@ data/*
 # Keep directory placeholders
 !data/**/
 !data/**/.gitkeep
+data/digit/.gitkeep
+data/digit/**
+data/dlib_cropped_lips_dataset/.gitkeep
+data/dlib_cropped_lips_dataset/**
