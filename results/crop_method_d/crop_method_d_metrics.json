@@ -1,0 +1,20 @@
+{
+  "total_frames_processed": 13610,
+  "successful_crops": 13610,
+  "failed_crops": 0,
+  "success_rate_percent": 100.0,
+  "raw_mouth_width_mean": 110.94,
+  "raw_mouth_width_median": 113.0,
+  "raw_mouth_height_mean": 52.58,
+  "raw_mouth_height_median": 51.0,
+  "raw_mouth_ar_mean": 2.2059,
+  "raw_mouth_ar_median": 2.1923,
+  "scaled_roi_width_mean": 96.0,
+  "scaled_roi_width_median": 96.0,
+  "scaled_roi_height_mean": 50.07,
+  "scaled_roi_height_median": 48.0,
+  "mean_vertical_padding_px": 45.93,
+  "median_vertical_padding_px": 48.0,
+  "target_output_dimensions": "96x96",
+  "distortion_percentage": 0.0
+}

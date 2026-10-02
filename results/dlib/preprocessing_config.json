@@ -1,0 +1,58 @@
+{
+  "seed": 42,
+  "num_classes": 11,
+  "num_frames": 30,
+  "image_width": 128,
+  "image_height": 64,
+  "channels": 3,
+  "grayscale": false,
+  "batch_size": 16,
+  "augmentation_enabled": false,
+  "split_information": {
+    "train_speakers": [
+      "s2",
+      "s3",
+      "s5",
+      "s6",
+      "s7",
+      "s10",
+      "s11",
+      "s12",
+      "s13",
+      "s14",
+      "s15",
+      "s16",
+      "s17",
+      "s18",
+      "s19",
+      "s20",
+      "s22",
+      "s23",
+      "s25",
+      "s26",
+      "s27",
+      "s28",
+      "s29",
+      "s30"
+    ],
+    "val_speakers": [
+      "s8",
+      "s9",
+      "s24"
+    ],
+    "test_speakers": [
+      "s1",
+      "s4",
+      "s21"
+    ],
+    "train_utterances": 264,
+    "val_utterances": 33,
+    "test_utterances": 33,
+    "total_utterances": 330
+  },
+  "artifacts": {
+    "manifest_csv": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/results/dlib/preprocessing_manifest.csv",
+    "speaker_split_json": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/results/dlib/speaker_split.json",
+    "class_mapping_json": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/results/dlib/class_mapping.json"
+  }
+}

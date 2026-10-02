@@ -1,0 +1,11 @@
+{
+  "model_name": "cnn_gru",
+  "parameters_count": 53867,
+  "training_time_sec": 254.14,
+  "test_accuracy": 0.1061,
+  "test_macro_precision": 0.0594,
+  "test_macro_recall": 0.1061,
+  "test_macro_f1": 0.0592,
+  "correct_test": 7,
+  "total_test": 66
+}

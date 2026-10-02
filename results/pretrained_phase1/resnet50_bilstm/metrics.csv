@@ -1,0 +1,2 @@
+model_name,total_parameters,trainable_parameters,non_trainable_parameters,training_time_seconds,best_epoch,best_val_loss,best_val_accuracy,test_accuracy,test_macro_precision,test_macro_recall,test_macro_f1,correct_test_predictions,incorrect_test_predictions
+ResNet50 + BiLSTM,24670987,1083275,23587712,38.09,77,2.3199,0.1591,0.1061,0.0308,0.1061,0.0464,7,59

@@ -1,0 +1,15 @@
+{
+  "model_name": "MobileNetV2 + BiLSTM",
+  "total_parameters": 2948043,
+  "trainable_parameters": 690059,
+  "training_time_seconds": 51.8,
+  "best_epoch": 13,
+  "best_val_loss": 1.9858,
+  "best_val_accuracy": 0.3409,
+  "test_accuracy": 0.3333,
+  "test_macro_precision": 0.3888,
+  "test_macro_recall": 0.3333,
+  "test_macro_f1": 0.3271,
+  "correct_test_predictions": 22,
+  "incorrect_test_predictions": 44
+}

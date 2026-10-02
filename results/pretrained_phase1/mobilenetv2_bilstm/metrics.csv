@@ -1,0 +1,2 @@
+model_name,total_parameters,trainable_parameters,non_trainable_parameters,training_time_seconds,best_epoch,best_val_loss,best_val_accuracy,test_accuracy,test_macro_precision,test_macro_recall,test_macro_f1,correct_test_predictions,incorrect_test_predictions
+MobileNetV2 + BiLSTM,2948043,690059,2257984,19.6,20,2.2397,0.1591,0.0758,0.048,0.0758,0.0568,5,61

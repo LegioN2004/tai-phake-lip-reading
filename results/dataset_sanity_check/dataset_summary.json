@@ -1,0 +1,108 @@
+{
+  "verdict": "PASS WITH WARNINGS",
+  "verdict_reasons": [
+    "91 sample(s) flagged with non-critical warnings (e.g. resolution variations or frame count discrepancies)",
+    "88 sample(s) have frame resolutions other than standard 720x1280"
+  ],
+  "statistics": {
+    "total_expected_samples": 330,
+    "actual_samples_checked": 330,
+    "valid_samples_count": 330,
+    "error_samples_count": 0,
+    "total_extracted_frames": 13610,
+    "frame_count_stats": {
+      "min": 15.0,
+      "max": 92.0,
+      "mean": 41.24,
+      "median": 40.0,
+      "std": 11.97
+    },
+    "mp4_duration_stats": {
+      "min": 0.5,
+      "max": 3.07,
+      "mean": 1.38,
+      "median": 1.33,
+      "std": 0.4
+    },
+    "mp4_fps_stats": {
+      "min": 26.99,
+      "max": 30.38,
+      "mean": 29.98,
+      "median": 30.0,
+      "std": 0.22
+    },
+    "mp4_frame_stats": {
+      "min": 15.0,
+      "max": 92.0,
+      "mean": 41.24,
+      "median": 40.0,
+      "std": 11.97
+    },
+    "frame_resolutions": {
+      "720x1280": 242,
+      "720x1080": 10,
+      "1280x720": 76,
+      "1080x1920": 1,
+      "960x1280": 1
+    },
+    "speaker_counts": {
+      "s1": 11,
+      "s2": 11,
+      "s3": 11,
+      "s4": 11,
+      "s5": 11,
+      "s6": 11,
+      "s7": 11,
+      "s8": 11,
+      "s9": 11,
+      "s10": 11,
+      "s11": 11,
+      "s12": 11,
+      "s13": 11,
+      "s14": 11,
+      "s15": 11,
+      "s16": 11,
+      "s17": 11,
+      "s18": 11,
+      "s19": 11,
+      "s20": 11,
+      "s21": 11,
+      "s22": 11,
+      "s23": 11,
+      "s24": 11,
+      "s25": 11,
+      "s26": 11,
+      "s27": 11,
+      "s28": 11,
+      "s29": 11,
+      "s30": 11
+    },
+    "digit_counts": {
+      "d0": 30,
+      "d1": 30,
+      "d2": 30,
+      "d3": 30,
+      "d4": 30,
+      "d5": 30,
+      "d6": 30,
+      "d7": 30,
+      "d8": 30,
+      "d9": 30,
+      "d10": 30
+    },
+    "duplicate_hash_groups": 0,
+    "invalid_files_count": 0,
+    "structure_issues_count": 0
+  },
+  "configuration": {
+    "root_dir": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/digit",
+    "output_dir": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/results/dataset_sanity_check",
+    "expected_speakers": 30,
+    "expected_digits": 11,
+    "expected_resolution": [
+      720,
+      1280
+    ],
+    "metadata_csv": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/metadata.csv"
+  }
+}

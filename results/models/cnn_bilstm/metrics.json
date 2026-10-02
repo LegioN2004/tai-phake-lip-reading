@@ -1,0 +1,11 @@
+{
+  "model_name": "cnn_bilstm",
+  "parameters_count": 95659,
+  "training_time_sec": 290.7,
+  "test_accuracy": 0.1667,
+  "test_macro_precision": 0.1734,
+  "test_macro_recall": 0.1667,
+  "test_macro_f1": 0.1234,
+  "correct_test": 11,
+  "total_test": 66
+}

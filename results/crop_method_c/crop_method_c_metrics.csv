@@ -1,0 +1,2 @@
+total_frames_processed,successful_crops,failed_crops,success_rate_percent,mouth_containment_percent,border_padding_needed_percent,raw_mouth_width_mean,raw_mouth_width_median,raw_mouth_height_mean,raw_mouth_height_median,raw_mouth_ar_mean,raw_mouth_ar_median,source_crop_width_mean,source_crop_width_median,source_crop_height_mean,source_crop_height_median,source_crop_ar_mean,source_crop_ar_median,target_output_dimensions,target_aspect_ratio
+13610,13610,0,100.0,100.0,0.0,110.94,113.0,52.58,51.0,2.2059,2.1923,160.81,160.0,80.4,80.0,2.0001,2.0,128x64,2.0:1

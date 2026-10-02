@@ -1,0 +1,11 @@
+{
+  "model_name": "cnn_bigru",
+  "parameters_count": 79531,
+  "training_time_sec": 494.3,
+  "test_accuracy": 0.2424,
+  "test_macro_precision": 0.1848,
+  "test_macro_recall": 0.2424,
+  "test_macro_f1": 0.2055,
+  "correct_test": 16,
+  "total_test": 66
+}

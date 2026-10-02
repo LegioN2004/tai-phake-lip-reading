@@ -1,0 +1,15 @@
+{
+  "model_name": "ResNet50 + BiLSTM",
+  "total_parameters": 24670987,
+  "trainable_parameters": 1083275,
+  "training_time_seconds": 104.31,
+  "best_epoch": 28,
+  "best_val_loss": 2.2564,
+  "best_val_accuracy": 0.1591,
+  "test_accuracy": 0.1212,
+  "test_macro_precision": 0.0503,
+  "test_macro_recall": 0.1212,
+  "test_macro_f1": 0.0688,
+  "correct_test_predictions": 8,
+  "incorrect_test_predictions": 58
+}

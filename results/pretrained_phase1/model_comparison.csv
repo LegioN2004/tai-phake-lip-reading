@@ -1,0 +1,4 @@
+model,backbone,status,total_params,trainable_params,best_epoch,best_val_loss,best_val_accuracy,test_accuracy,test_macro_precision,test_macro_recall,test_macro_f1,correct_test,incorrect_test,training_time_sec
+MobileNetV2 + BiLSTM,MobileNetV2 (ImageNet),COMPLETED,2948043,690059,13,1.9858,0.3409,0.3333,0.3888,0.3333,0.3271,22,44,51.8
+EfficientNetB0 + BiLSTM,EfficientNetB0 (ImageNet),COMPLETED,4739630,690059,63,2.3979,0.0909,0.0909,0.0083,0.0909,0.0152,6,60,124.43
+ResNet50 + BiLSTM,ResNet50 (ImageNet),COMPLETED,24670987,1083275,28,2.2564,0.1591,0.1212,0.0503,0.1212,0.0688,8,58,104.31

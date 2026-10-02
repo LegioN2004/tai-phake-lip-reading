@@ -1,0 +1,7 @@
+{
+  "model_name": "ResNet18 + BiLSTM",
+  "status": "STOPPED",
+  "reason": "ResNet18 is not packaged in standard tf.keras.applications (which only supplies ResNet50, 101, 152). ResNet50 was strictly forbidden by project constraints.",
+  "user_instruction": "If ResNet18 is not available in the current TensorFlow/Keras environment, do not silently replace it with another model. Clearly report that ResNet18 is unavailable and stop that model experiment so I can decide what to use.",
+  "action_required": "Awaiting user decision on alternative lightweight ResNet wheel / custom ResNet18 weights."
+}

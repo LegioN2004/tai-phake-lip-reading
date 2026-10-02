@@ -1,0 +1,11 @@
+{
+  "model_name": "cnn_lstm",
+  "parameters_count": 61931,
+  "training_time_sec": 261.61,
+  "test_accuracy": 0.1515,
+  "test_macro_precision": 0.0846,
+  "test_macro_recall": 0.1515,
+  "test_macro_f1": 0.0906,
+  "correct_test": 10,
+  "total_test": 66
+}
