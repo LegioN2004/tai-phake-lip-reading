@@ -3,7 +3,7 @@
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
-# 1. Dataset & Media Files (NEVER track in Git - trimmed videos stay local/Drive)
+# 1. Dataset & Media Files (Local raw/processed data - NEVER push heavy datasets)
 # ------------------------------------------------------------------------------
 # Video formats
 *.mp4
@@ -21,15 +21,30 @@
 *.aac
 *.flac
 *.m4a
+*.jpg
 
-# Local dataset storage directories (frames in data/digit are tracked; videos are ignored above)
-data/trimmed/*
-!data/trimmed/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
+# Frame and image files in data directories
+data/*
+!data/metadata.csv
+!data/manifest.csv
+!data/extraction_report.csv
+!data/README.md
+!data/**/
+!data/**/.gitkeep
+
+# Ignore all cropped and augmented datasets
+data/trimmed/
+data/processed/
+data/digit/
+data/digit_folder_initial/
+data/digit_vid_frames/
+data/cropped_lips_dataset/
+data/cropped_lips_dataset_*/
+data/dlib_cropped_lips_dataset/
+data/augmented_100spk_dataset_d/
 
 # ------------------------------------------------------------------------------
-# 2. Model Weights & Checkpoints (Heavy binary files)
+# 2. Model Weights & Heavy Checkpoints (Git LFS or local storage only)
 # ------------------------------------------------------------------------------
 *.h5
 *.keras
@@ -39,11 +54,18 @@ data/processed/*
 *.onnx
 *.tflite
 *.pb
+*.weights
 models/*
 !models/.gitkeep
+results/**/best_model.keras
+results/**/checkpoint*
+results/**/*.keras
+results/**/*.h5
+results/**/*.pth
+results/**/*.pt
 
 # ------------------------------------------------------------------------------
-# 3. Python Cache & Environment (Managed via UV / Python 3.12)
+# 3. Python Cache, Build, & Virtual Environments (UV / Python 3.12)
 # ------------------------------------------------------------------------------
 __pycache__/
 *.py[cod]
@@ -59,13 +81,12 @@ lib/
 lib64/
 parts/
 sdist/
-var/
 wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 
-# Virtual Environments
+# Virtual environments
 .venv/
 venv/
 env/
@@ -74,7 +95,7 @@ env.bak/
 venv.bak/
 
 # ------------------------------------------------------------------------------
-# 4. Jupyter Notebook Checkpoints
+# 4. Jupyter Notebook Artifacts
 # ------------------------------------------------------------------------------
 .ipynb_checkpoints/
 */.ipynb_checkpoints/*
@@ -82,26 +103,17 @@ venv.bak/
 # ------------------------------------------------------------------------------
 # 5. OS and IDE Artifacts
 # ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-.DS_Store
-Thumbs.db
-desktop.ini
 
-# Ignore all data contents by default
-data/*
-
-# Keep the metadata and documentation
-!data/metadata.csv
-!data/README.md
-
-# Keep directory placeholders
-!data/**/
-!data/**/.gitkeep
-data/digit/.gitkeep
-data/digit/**
-data/dlib_cropped_lips_dataset/.gitkeep
-data/dlib_cropped_lips_dataset/**
+# Temporary scratch and experiment work logs
+scratch/
+file_count
