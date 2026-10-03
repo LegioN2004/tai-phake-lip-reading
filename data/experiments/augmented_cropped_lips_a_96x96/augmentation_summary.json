@@ -1,0 +1,63 @@
+{
+  "dataset_name": "augmented_cropped_lips_a_96x96",
+  "source_dataset": "cropped_lips_dataset_a_96x96",
+  "number_of_original_speakers": 30,
+  "number_of_augmented_speakers": 120,
+  "number_of_digits": 11,
+  "original_frame_count": 13610,
+  "expected_augmented_frame_count": 54440,
+  "actual_augmented_frame_count": 54440,
+  "total_output_frame_count": 68050,
+  "number_of_failed_augmentations": 0,
+  "dimension_verification": {
+    "expected_shape": [
+      96,
+      96,
+      3
+    ],
+    "dimension_errors": 0,
+    "corrupt_errors": 0,
+    "all_exact_96x96x3": true
+  },
+  "augmentation_configuration": {
+    "num_variants": 4,
+    "horizontal_translation_px": [
+      -3.0,
+      3.0
+    ],
+    "vertical_translation_px": [
+      -3.0,
+      3.0
+    ],
+    "rotation_degrees": [
+      -3.0,
+      3.0
+    ],
+    "scale_range": [
+      0.97,
+      1.03
+    ],
+    "contrast_alpha": [
+      0.92,
+      1.08
+    ],
+    "brightness_beta": [
+      -10.0,
+      10.0
+    ],
+    "gaussian_noise_prob": 0.5,
+    "gaussian_noise_sigma": [
+      1.0,
+      3.5
+    ],
+    "gaussian_blur_prob": 0.3,
+    "gaussian_blur_kernel": [
+      3,
+      3
+    ],
+    "gaussian_blur_sigma": 0.5,
+    "border_mode": "BORDER_REFLECT_101"
+  },
+  "random_seed": 42,
+  "elapsed_seconds": 11.94
+}
