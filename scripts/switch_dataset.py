@@ -18,12 +18,14 @@ from pathlib import Path
 # ==============================================================================
 # 1. EDIT THIS VARIABLE OR PASS IT AS A COMMAND LINE ARGUMENT
 # ==============================================================================
-DATASET_NAME = "augmented_100spk_dataset_d"
+DATASET_NAME = "correctly_augmented_cropped_lips_d_96x96"
 # ==============================================================================
 
 # Fixed canonical speakers
-VAL_SPEAKERS = {"s12", "s19", "s21", "s29"}
-TEST_SPEAKERS = {"s9", "s10", "s16", "s18", "s24", "s28"}
+# VAL_SPEAKERS = {"s12", "s19", "s21", "s29"}
+# TEST_SPEAKERS = {"s9", "s10", "s16", "s18", "s24", "s28"}
+VAL_SPEAKERS = {"s1", "s4", "s21"}
+TEST_SPEAKERS = {"s9", "s8", "s24"}
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 EXPERIMENTS_DIR = PROJECT_ROOT / "data" / "experiments"

@@ -40,8 +40,8 @@ import pandas as pd
 from tqdm import tqdm
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-INPUT_ROOT = PROJECT_ROOT / "data" / "experiments" / "cropped_lips_dataset_a_96x96"
-OUTPUT_ROOT = PROJECT_ROOT / "data" / "experiments" / "augmented_cropped_lips_a_96x96"
+INPUT_ROOT = PROJECT_ROOT / "data" / "experiments" / "cropped_lips_dataset_d_96x96"
+OUTPUT_ROOT = PROJECT_ROOT / "data" / "experiments" / "correctly_augmented_cropped_lips_d_96x96"
 
 TARGET_WIDTH = 96
 TARGET_HEIGHT = 96
@@ -58,44 +58,72 @@ DEFAULT_SEED = 42
 # Mild blur gaussian kernel (3, 3) sigma 0.5
 
 
-def get_deterministic_rng(base_seed: int, speaker: str, digit: str, frame: str, variant_idx: int) -> np.random.Generator:
+def get_geometric_rng(base_seed: int, speaker: str, digit: str, variant_idx: int) -> np.random.Generator:
     """
-    Creates a deterministic numpy Generator unique to (base_seed, speaker, digit, frame, variant).
+    Creates a deterministic numpy Generator unique to (base_seed, speaker, digit, variant)
+    for sequence-consistent geometric transformations across all frames of an utterance.
     """
-    key = f"{base_seed}_{speaker}_{digit}_{frame}_aug{variant_idx}".encode("utf-8")
-    # Generate 32-bit uint seed from sha256
+    key = f"{base_seed}_{speaker}_{digit}_aug{variant_idx}_geometry".encode("utf-8")
     hash_digest = hashlib.sha256(key).digest()
     seed_uint32 = int.from_bytes(hash_digest[:4], byteorder="little")
     return np.random.default_rng(seed_uint32)
 
 
-def apply_conservative_augmentation(img: np.ndarray, rng: np.random.Generator) -> np.ndarray:
+def get_photometric_rng(base_seed: int, speaker: str, digit: str, frame: str, variant_idx: int) -> np.random.Generator:
     """
-    Applies conservative, realistic image augmentation for 96x96 lip ROI:
-    1. Small horizontal translation (-3 to +3 px)
-    2. Small vertical translation (-3 to +3 px)
-    3. Small rotation (-3 to +3 deg)
-    4. Very small scale/zoom variation (0.97 to 1.03)
-    5. Small contrast variation (0.92 to 1.08)
-    6. Small brightness variation (-10 to +10)
-    7. Mild Gaussian noise (probability 0.5, sigma 1.0 to 3.5)
-    8. Mild blur (probability 0.3, 3x3 gaussian blur)
-    
-    Guarantees output shape remains exactly 96x96x3.
+    Creates a deterministic numpy Generator unique to (base_seed, speaker, digit, frame, variant)
+    for frame-independent photometric variations.
     """
-    h, w = img.shape[:2]
-    
-    # 1, 2, 3, 8: Geometric transform via Affine matrix
+    key = f"{base_seed}_{speaker}_{digit}_{frame}_aug{variant_idx}_photo".encode("utf-8")
+    hash_digest = hashlib.sha256(key).digest()
+    seed_uint32 = int.from_bytes(hash_digest[:4], byteorder="little")
+    return np.random.default_rng(seed_uint32)
+
+
+def sample_geometric_transform(
+    rng: np.random.Generator,
+    width: int = TARGET_WIDTH,
+    height: int = TARGET_HEIGHT,
+) -> np.ndarray:
+    """
+    Samples geometric transformation parameters ONCE per utterance variant:
+    - Small horizontal translation (-3 to +3 px)
+    - Small vertical translation (-3 to +3 px)
+    - Small rotation (-3 to +3 deg)
+    - Very small scale/zoom variation (0.97 to 1.03)
+
+    Returns the 2x3 affine transformation matrix M.
+    """
     tx = float(rng.uniform(-3.0, 3.0))
     ty = float(rng.uniform(-3.0, 3.0))
     angle = float(rng.uniform(-3.0, 3.0))
     scale = float(rng.uniform(0.97, 1.03))
-    
-    center = (w / 2.0, h / 2.0)
+
+    center = (width / 2.0, height / 2.0)
     M = cv2.getRotationMatrix2D(center, angle, scale)
     M[0, 2] += tx
     M[1, 2] += ty
-    
+    return M
+
+
+def apply_conservative_augmentation(
+    img: np.ndarray,
+    M: np.ndarray,
+    rng: np.random.Generator,
+) -> np.ndarray:
+    """
+    Applies conservative, realistic image augmentation for 96x96 lip ROI:
+    1. Geometric transform via affine matrix M (fixed per utterance variant)
+    2. Small contrast variation (0.92 to 1.08)
+    3. Small brightness variation (-10 to +10)
+    4. Mild Gaussian noise (probability 0.5, sigma 1.0 to 3.5)
+    5. Mild blur (probability 0.3, 3x3 gaussian blur)
+
+    Guarantees output shape remains exactly 96x96x3.
+    """
+    h, w = img.shape[:2]
+
+    # 1: Geometric transform via pre-sampled affine matrix
     transformed = cv2.warpAffine(
         img,
         M,
@@ -103,22 +131,22 @@ def apply_conservative_augmentation(img: np.ndarray, rng: np.random.Generator) -
         flags=cv2.INTER_LINEAR,
         borderMode=cv2.BORDER_REFLECT_101,
     )
-    
-    # 4 & 5: Photometric variations (Contrast & Brightness)
+
+    # 2 & 3: Photometric variations (Contrast & Brightness)
     alpha = float(rng.uniform(0.92, 1.08))  # contrast factor
     beta = float(rng.uniform(-10.0, 10.0))  # brightness shift
     photometric = np.clip(alpha * transformed.astype(np.float32) + beta, 0.0, 255.0).astype(np.uint8)
-    
-    # 6: Mild Gaussian noise (50% probability)
+
+    # 4: Mild Gaussian noise (50% probability)
     if rng.random() < 0.50:
         noise_sigma = float(rng.uniform(1.0, 3.5))
         noise = rng.normal(0.0, noise_sigma, photometric.shape)
         photometric = np.clip(photometric.astype(np.float32) + noise, 0.0, 255.0).astype(np.uint8)
-        
-    # 7: Mild blur (30% probability)
+
+    # 5: Mild blur (30% probability)
     if rng.random() < 0.30:
         photometric = cv2.GaussianBlur(photometric, (3, 3), 0.5)
-        
+
     return photometric
 
 
@@ -132,16 +160,25 @@ def process_speaker_augmentation(
     """
     spk, frame_list, in_root, out_root, base_seed, overwrite = task
     records: List[Dict[str, any]] = []
-    
+
+    # Sample geometric transformation ONCE per utterance variant (speaker, digit, variant_idx)
+    # The affine matrix M remains fixed across all frames of the utterance.
+    geo_transforms: Dict[Tuple[str, int], np.ndarray] = {}
+    unique_digits = sorted({dig for dig, _, _ in frame_list})
+    for dig in unique_digits:
+        for v_idx in range(1, NUM_VARIANTS + 1):
+            geo_rng = get_geometric_rng(base_seed, spk, dig, v_idx)
+            geo_transforms[(dig, v_idx)] = sample_geometric_transform(geo_rng, TARGET_WIDTH, TARGET_HEIGHT)
+
     for dig, fname, src_fpath_str in frame_list:
         src_path = Path(src_fpath_str)
         orig_out_path = out_root / spk / dig / fname
-        
+
         # 1. Handle original frame
         orig_out_path.parent.mkdir(parents=True, exist_ok=True)
         if overwrite or not orig_out_path.exists():
             shutil.copy2(src_path, orig_out_path)
-            
+
         # Read image once for augmentations
         img = cv2.imread(src_fpath_str)
         if img is None:
@@ -158,16 +195,17 @@ def process_speaker_augmentation(
                     "error": "Failed to read source frame",
                 })
             continue
-            
+
         # 2. Generate 4 augmented variants
         for v_idx in range(1, NUM_VARIANTS + 1):
             aug_spk = f"{spk}_aug{v_idx}"
             out_path = out_root / aug_spk / dig / fname
             out_path.parent.mkdir(parents=True, exist_ok=True)
-            
+
             if overwrite or not out_path.exists():
-                rng = get_deterministic_rng(base_seed, spk, dig, fname, v_idx)
-                aug_img = apply_conservative_augmentation(img, rng)
+                M = geo_transforms[(dig, v_idx)]
+                photo_rng = get_photometric_rng(base_seed, spk, dig, fname, v_idx)
+                aug_img = apply_conservative_augmentation(img, M, photo_rng)
                 # Verify dimensions
                 if aug_img.shape[0] != TARGET_HEIGHT or aug_img.shape[1] != TARGET_WIDTH:
                     records.append({
