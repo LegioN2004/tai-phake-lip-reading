@@ -98,22 +98,29 @@ def main():
         base_spk = spk_name.split("_")[0]
 
         if base_spk in TEST_SPEAKERS:
-            target_link = TEST_DIR / spk_name
-            target_link.symlink_to(spk_path.resolve())
-            counts["test"] += 1
+            # Only link clean base speaker, exclude any _aug or _dup folders
+            if spk_name == base_spk:
+                target_link = TEST_DIR / spk_name
+                target_link.symlink_to(spk_path.resolve())
+                counts["test"] += 1
         elif base_spk in VAL_SPEAKERS:
-            target_link = VAL_DIR / spk_name
-            target_link.symlink_to(spk_path.resolve())
-            counts["val"] += 1
+            # Only link clean base speaker, exclude any _aug or _dup folders
+            if spk_name == base_spk:
+                target_link = VAL_DIR / spk_name
+                target_link.symlink_to(spk_path.resolve())
+                counts["val"] += 1
         else:
             target_link = TRAIN_DIR / spk_name
             target_link.symlink_to(spk_path.resolve())
             counts["train"] += 1
 
+    val_spk_str = ", ".join(sorted(VAL_SPEAKERS, key=lambda x: int(x[1:]) if x[1:].isdigit() else x))
+    test_spk_str = ", ".join(sorted(TEST_SPEAKERS, key=lambda x: int(x[1:]) if x[1:].isdigit() else x))
+
     print("\nDataset successfully linked!")
     print(f"  Train: {counts['train']} speakers -> {TRAIN_DIR}")
-    print(f"  Val:   {counts['val']} speakers (s12, s19, s21, s29) -> {VAL_DIR}")
-    print(f"  Test:  {counts['test']} speakers (s9, s10, s16, s18, s24, s28) -> {TEST_DIR}")
+    print(f"  Val:   {counts['val']} speakers ({val_spk_str}) -> {VAL_DIR}")
+    print(f"  Test:  {counts['test']} speakers ({test_spk_str}) -> {TEST_DIR}")
     print("\nYou can now open 05_model_training_baseline.ipynb or 06_pretrained_phase1_baseline.ipynb and click 'Run All'!")
 
 
