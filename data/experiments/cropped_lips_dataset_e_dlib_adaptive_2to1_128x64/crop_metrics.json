@@ -1,0 +1,60 @@
+{
+  "dataset_name": "cropped_lips_dataset_e_dlib_adaptive_2to1_128x64",
+  "target_width": 128,
+  "target_height": 64,
+  "target_aspect_ratio": 2.0,
+  "margin_factor": 0.2,
+  "total_input_frames": 13610,
+  "successful_detections": 13610,
+  "failed_detections": 0,
+  "detection_success_rate_percent": 100.0,
+  "total_output_frames": 13610,
+  "dimension_verification": {
+    "expected_shape": [
+      64,
+      128,
+      3
+    ],
+    "dimension_errors": 0,
+    "channel_errors": 0,
+    "all_exact_128x64x3": true
+  },
+  "crop_width_statistics": {
+    "min": 56.0,
+    "mean": 166.74650991917707,
+    "median": 168.0,
+    "std": 50.432678163699144,
+    "max": 394.0,
+    "p5": 84.0,
+    "p25": 134.0,
+    "p75": 204.0,
+    "p95": 240.0
+  },
+  "crop_height_statistics": {
+    "min": 28.0,
+    "mean": 83.37325495958854,
+    "median": 84.0,
+    "std": 25.216339081849572,
+    "max": 197.0,
+    "p5": 42.0,
+    "p25": 67.0,
+    "p75": 102.0,
+    "p95": 120.0
+  },
+  "crop_aspect_ratio_statistics": {
+    "min": 2.0,
+    "mean": 2.0,
+    "median": 2.0,
+    "std": 0.0,
+    "max": 2.0,
+    "p5": 2.0,
+    "p25": 2.0,
+    "p75": 2.0,
+    "p95": 2.0
+  },
+  "padding_count": 0,
+  "padding_rate_percent": 0.0,
+  "enlarged_crop_count": 4792,
+  "enlarged_crop_rate_percent": 35.21,
+  "elapsed_seconds": 108.33
+}
