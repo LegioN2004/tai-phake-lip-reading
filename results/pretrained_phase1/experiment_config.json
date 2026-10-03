@@ -2,16 +2,16 @@
   "experiment_phase": "Phase 1: Pretrained CNN + BiLSTM Baselines",
   "project_name": "Tai Phake Lip-Reading Visual Speech Recognition",
   "input_dimensions": [
-    64,
-    128,
+    96,
+    96,
     3
   ],
   "sequence_length": 30,
   "normalization": "pixel / 255.0 to [0, 1]",
   "augmentation": "OFF",
-  "num_speakers": 30,
+  "num_speakers": 110,
   "speaker_split": {
-    "train_speakers": 20,
+    "train_speakers": 100,
     "val_speakers": 4,
     "test_speakers": 6,
     "seed": 42
