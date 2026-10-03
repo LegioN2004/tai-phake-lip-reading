@@ -2,8 +2,8 @@
   "model_type": "cnn_lstm",
   "input_shape": [
     30,
-    64,
-    128,
+    96,
+    96,
     3
   ],
   "cnn_feature_dim": 64,
