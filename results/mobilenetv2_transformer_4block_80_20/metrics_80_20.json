@@ -6,30 +6,30 @@
   "seed": 42,
   "num_train_folders": 120,
   "num_base_train_speakers": 24,
-  "num_val_folders": 30,
+  "num_val_folders": 6,
   "num_base_val_speakers": 6,
   "num_test_folders": 0,
   "num_base_test_speakers": 0,
   "stage1": {
-    "best_epoch": 3,
-    "best_val_loss": 2.3170077800750732,
-    "best_val_accuracy": 0.4636363685131073,
+    "best_epoch": 4,
+    "best_val_loss": 2.1993095874786377,
+    "best_val_accuracy": 0.4848484992980957,
     "learning_rate": 0.0001,
     "max_epochs": 40,
     "patience": 8
   },
   "stage2": {
-    "best_epoch": 22,
-    "best_val_loss": 2.331761360168457,
-    "best_val_accuracy": 0.4424242377281189,
+    "best_epoch": 7,
+    "best_val_loss": 2.2626495361328125,
+    "best_val_accuracy": 0.5151515007019043,
     "fine_tune_fraction": 0.2,
     "learning_rate": 1e-05,
     "max_epochs": 25,
     "patience": 6
   },
   "final_validation": {
-    "loss": 2.331761360168457,
-    "accuracy": 0.40303030610084534
+    "loss": 2.2626495361328125,
+    "accuracy": 0.469696968793869
   },
   "final_test": "DISABLED",
   "parameters": {
