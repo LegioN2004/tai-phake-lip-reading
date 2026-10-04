@@ -1,0 +1,43 @@
+{
+  "model_name": "MobileNetV2_Transformer_4Block",
+  "temporal_head": "Transformer_4x_4heads_256dim",
+  "dataset_dir": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed",
+  "seed": 42,
+  "num_train_folders": 120,
+  "num_base_train_speakers": 24,
+  "num_val_speakers": 3,
+  "num_test_speakers": 3,
+  "stage1": {
+    "best_epoch": 10,
+    "best_val_loss": 1.9821971654891968,
+    "best_val_accuracy": 0.6060606241226196,
+    "learning_rate": 0.0001,
+    "max_epochs": 40,
+    "patience": 8
+  },
+  "stage2": {
+    "best_epoch": 3,
+    "best_val_loss": 1.7431336641311646,
+    "best_val_accuracy": 0.6666666865348816,
+    "fine_tune_fraction": 0.2,
+    "learning_rate": 1e-05,
+    "max_epochs": 25,
+    "patience": 6
+  },
+  "final_validation": {
+    "loss": 1.7431336641311646,
+    "accuracy": 0.5757575631141663
+  },
+  "final_test": {
+    "accuracy": 0.5454545454545454,
+    "macro_precision": 0.6700216450216451,
+    "macro_recall": 0.5454545454545454,
+    "macro_f1": 0.5166863439590712,
+    "correct_predictions": 18,
+    "total_test_samples": 33
+  },
+  "parameters": {
+    "total_params": 4697419,
+    "stage2_trainable_params": 3950155
+  }
+}
