@@ -1,23 +1,23 @@
 {
-  "dataset_name": "augmented_cropped_lips_a_96x96",
-  "source_dataset": "cropped_lips_dataset_a_96x96",
+  "dataset_name": "augmented_mediapipe_lips_dataset_112x112",
+  "source_dataset": "mediapipe_lips_dataset_112x112",
   "number_of_original_speakers": 30,
   "number_of_augmented_speakers": 120,
   "number_of_digits": 11,
-  "original_frame_count": 13610,
-  "expected_augmented_frame_count": 54440,
-  "actual_augmented_frame_count": 54440,
-  "total_output_frame_count": 68050,
+  "original_frame_count": 13554,
+  "expected_augmented_frame_count": 54216,
+  "actual_augmented_frame_count": 54216,
+  "total_output_frame_count": 67770,
   "number_of_failed_augmentations": 0,
   "dimension_verification": {
     "expected_shape": [
-      96,
-      96,
+      112,
+      112,
       3
     ],
     "dimension_errors": 0,
     "corrupt_errors": 0,
-    "all_exact_96x96x3": true
+    "all_exact_112x112x3": true
   },
   "augmentation_configuration": {
     "num_variants": 4,
@@ -56,8 +56,9 @@
       3
     ],
     "gaussian_blur_sigma": 0.5,
-    "border_mode": "BORDER_REFLECT_101"
+    "border_mode": "BORDER_REFLECT_101",
+    "jpeg_quality": 95
   },
   "random_seed": 42,
-  "elapsed_seconds": 11.24
+  "elapsed_seconds": 10.77
 }
