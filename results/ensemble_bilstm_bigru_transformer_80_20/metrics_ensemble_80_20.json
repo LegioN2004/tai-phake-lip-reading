@@ -1,0 +1,42 @@
+{
+  "experiment": "15_ensemble_bilstm_bigru_transformer",
+  "dataset_mode": "80_20",
+  "models_included": [
+    "EfficientNetB0_BiLSTM_AttentionPooling",
+    "EfficientNetB0_BiGRU_AttentionPooling",
+    "EfficientNetB0_Transformer_4Block"
+  ],
+  "weights_paths": {
+    "bilstm": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/results/efficientnetb0_bilstm_attention_pooling_80_20/efficientnetb0_bilstm_attention_pooling_stage2_best.weights.h5",
+    "bigru": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/results/efficientnetb0_bigru_attention_pooling_80_20/efficientnetb0_bigru_attention_pooling_stage2_best.weights.h5",
+    "transformer": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/results/efficientnetb0_transformer_4block_80_20/efficientnetb0_transformer_4block_stage2_best.weights.h5"
+  },
+  "individual_accuracies": {
+    "bilstm": 0.6045454545454545,
+    "bigru": 0.6,
+    "transformer": 0.5272727272727272
+  },
+  "ensemble_results": {
+    "uniform": {
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "accuracy": 0.6409090909090909,
+      "macro_f1": 0.6344207500732427
+    },
+    "optimal_weighted": {
+      "weights": [
+        0.30000000000000004,
+        0.35,
+        0.35
+      ],
+      "accuracy": 0.65,
+      "macro_f1": 0.6422862628761238
+    },
+    "delta_over_best_single": 0.045454545454545525
+  },
+  "num_validation_samples": 220,
+  "num_validation_speakers": 6
+}
