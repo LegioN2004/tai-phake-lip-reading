@@ -11,25 +11,25 @@
   "num_test_folders": 0,
   "num_base_test_speakers": 0,
   "stage1": {
-    "best_epoch": 3,
-    "best_val_loss": 2.342494249343872,
-    "best_val_accuracy": 0.459090918302536,
+    "best_epoch": 18,
+    "best_val_loss": 2.00089955329895,
+    "best_val_accuracy": 0.5636363625526428,
     "learning_rate": 0.0001,
     "max_epochs": 40,
     "patience": 8
   },
   "stage2": {
-    "best_epoch": 2,
-    "best_val_loss": 2.1126761436462402,
-    "best_val_accuracy": 0.4272727370262146,
+    "best_epoch": 1,
+    "best_val_loss": 2.030679941177368,
+    "best_val_accuracy": 0.5272727012634277,
     "fine_tune_fraction": 0.2,
     "learning_rate": 1e-05,
     "max_epochs": 25,
     "patience": 6
   },
   "final_validation": {
-    "loss": 2.1126761436462402,
-    "accuracy": 0.4000000059604645
+    "loss": 2.030679941177368,
+    "accuracy": 0.5272727012634277
   },
   "final_test": "DISABLED",
   "parameters": {
