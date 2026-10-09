@@ -1,0 +1,39 @@
+{
+  "model_name": "EfficientNetB0_BiGRU_AttentionPooling",
+  "temporal_head": "BiGRU_128units_AttentionPooling",
+  "dataset_mode": "80_20",
+  "dataset_dir": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed",
+  "seed": 42,
+  "num_train_folders": 80,
+  "num_base_train_speakers": 24,
+  "num_val_folders": 20,
+  "num_base_val_speakers": 6,
+  "num_test_folders": 0,
+  "num_base_test_speakers": 0,
+  "stage1": {
+    "best_epoch": 23,
+    "best_val_loss": 1.631833553314209,
+    "best_val_accuracy": 0.5681818127632141,
+    "learning_rate": 0.0001,
+    "max_epochs": 40,
+    "patience": 8
+  },
+  "stage2": {
+    "best_epoch": 4,
+    "best_val_loss": 1.6406607627868652,
+    "best_val_accuracy": 0.6000000238418579,
+    "fine_tune_fraction": 0.2,
+    "learning_rate": 1e-05,
+    "max_epochs": 25,
+    "patience": 6
+  },
+  "final_validation": {
+    "loss": 1.6406607627868652,
+    "accuracy": 0.6000000238418579
+  },
+  "final_test": "DISABLED",
+  "parameters": {
+    "total_params": 4677295,
+    "stage2_trainable_params": 2915228
+  }
+}
