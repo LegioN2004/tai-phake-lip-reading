@@ -1,0 +1,39 @@
+{
+  "model_name": "MobileNetV2_BiLSTM_AttentionPooling",
+  "temporal_head": "BiLSTM_128units_AttentionPooling",
+  "dataset_mode": "80_20",
+  "dataset_dir": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed",
+  "seed": 42,
+  "num_train_folders": 80,
+  "num_base_train_speakers": 24,
+  "num_val_folders": 20,
+  "num_base_val_speakers": 6,
+  "num_test_folders": 0,
+  "num_base_test_speakers": 0,
+  "stage1": {
+    "best_epoch": 36,
+    "best_val_loss": 2.0626471042633057,
+    "best_val_accuracy": 0.4636363685131073,
+    "learning_rate": 0.0001,
+    "max_epochs": 40,
+    "patience": 8
+  },
+  "stage2": {
+    "best_epoch": 1,
+    "best_val_loss": 1.9843978881835938,
+    "best_val_accuracy": 0.4545454680919647,
+    "fine_tune_fraction": 0.2,
+    "learning_rate": 1e-05,
+    "max_epochs": 25,
+    "patience": 6
+  },
+  "final_validation": {
+    "loss": 1.9843978881835938,
+    "accuracy": 0.4363636374473572
+  },
+  "final_test": "DISABLED",
+  "parameters": {
+    "total_params": 2983500,
+    "stage2_trainable_params": 2236236
+  }
+}
