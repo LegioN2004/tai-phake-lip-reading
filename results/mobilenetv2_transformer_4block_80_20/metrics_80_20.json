@@ -4,32 +4,32 @@
   "dataset_mode": "80_20",
   "dataset_dir": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed",
   "seed": 42,
-  "num_train_folders": 120,
+  "num_train_folders": 80,
   "num_base_train_speakers": 24,
-  "num_val_folders": 6,
+  "num_val_folders": 20,
   "num_base_val_speakers": 6,
   "num_test_folders": 0,
   "num_base_test_speakers": 0,
   "stage1": {
-    "best_epoch": 3,
-    "best_val_loss": 2.353037118911743,
-    "best_val_accuracy": 0.469696968793869,
+    "best_epoch": 4,
+    "best_val_loss": 2.375384569168091,
+    "best_val_accuracy": 0.4318181872367859,
     "learning_rate": 0.0001,
     "max_epochs": 40,
     "patience": 8
   },
   "stage2": {
-    "best_epoch": 20,
-    "best_val_loss": 2.319852352142334,
-    "best_val_accuracy": 0.4545454680919647,
+    "best_epoch": 6,
+    "best_val_loss": 2.254570722579956,
+    "best_val_accuracy": 0.40909090638160706,
     "fine_tune_fraction": 0.2,
     "learning_rate": 1e-05,
     "max_epochs": 25,
     "patience": 6
   },
   "final_validation": {
-    "loss": 2.319852352142334,
-    "accuracy": 0.40909090638160706
+    "loss": 2.254570722579956,
+    "accuracy": 0.3909091055393219
   },
   "final_test": "DISABLED",
   "parameters": {

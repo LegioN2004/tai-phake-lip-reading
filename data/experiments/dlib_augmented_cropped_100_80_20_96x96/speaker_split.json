@@ -1,0 +1,312 @@
+{
+  "dataset_name": "dlib_augmented_cropped_100_80_20_96x96",
+  "seed": 42,
+  "num_train_base_speakers": 24,
+  "num_val_base_speakers": 6,
+  "train_base_speakers": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8",
+    "s9",
+    "s10",
+    "s11",
+    "s12",
+    "s13",
+    "s14",
+    "s15",
+    "s16",
+    "s17",
+    "s18",
+    "s19",
+    "s20",
+    "s21",
+    "s22",
+    "s23",
+    "s24"
+  ],
+  "val_base_speakers": [
+    "s25",
+    "s26",
+    "s27",
+    "s28",
+    "s29",
+    "s30"
+  ],
+  "target_train_folders": 80,
+  "target_val_folders": 20,
+  "total_folders": 100,
+  "train_folder_mapping": {
+    "s1": [
+      "s1",
+      "s1_aug1",
+      "s1_aug2",
+      "s1_aug3"
+    ],
+    "s2": [
+      "s2",
+      "s2_aug1",
+      "s2_aug2",
+      "s2_aug3"
+    ],
+    "s3": [
+      "s3",
+      "s3_aug1",
+      "s3_aug2",
+      "s3_aug3"
+    ],
+    "s4": [
+      "s4",
+      "s4_aug1",
+      "s4_aug2",
+      "s4_aug3"
+    ],
+    "s5": [
+      "s5",
+      "s5_aug1",
+      "s5_aug2",
+      "s5_aug3"
+    ],
+    "s6": [
+      "s6",
+      "s6_aug1",
+      "s6_aug2",
+      "s6_aug3"
+    ],
+    "s7": [
+      "s7",
+      "s7_aug1",
+      "s7_aug2",
+      "s7_aug3"
+    ],
+    "s8": [
+      "s8",
+      "s8_aug1",
+      "s8_aug2",
+      "s8_aug3"
+    ],
+    "s9": [
+      "s9",
+      "s9_aug1",
+      "s9_aug2"
+    ],
+    "s10": [
+      "s10",
+      "s10_aug1",
+      "s10_aug2"
+    ],
+    "s11": [
+      "s11",
+      "s11_aug1",
+      "s11_aug2"
+    ],
+    "s12": [
+      "s12",
+      "s12_aug1",
+      "s12_aug2"
+    ],
+    "s13": [
+      "s13",
+      "s13_aug1",
+      "s13_aug2"
+    ],
+    "s14": [
+      "s14",
+      "s14_aug1",
+      "s14_aug2"
+    ],
+    "s15": [
+      "s15",
+      "s15_aug1",
+      "s15_aug2"
+    ],
+    "s16": [
+      "s16",
+      "s16_aug1",
+      "s16_aug2"
+    ],
+    "s17": [
+      "s17",
+      "s17_aug1",
+      "s17_aug2"
+    ],
+    "s18": [
+      "s18",
+      "s18_aug1",
+      "s18_aug2"
+    ],
+    "s19": [
+      "s19",
+      "s19_aug1",
+      "s19_aug2"
+    ],
+    "s20": [
+      "s20",
+      "s20_aug1",
+      "s20_aug2"
+    ],
+    "s21": [
+      "s21",
+      "s21_aug1",
+      "s21_aug2"
+    ],
+    "s22": [
+      "s22",
+      "s22_aug1",
+      "s22_aug2"
+    ],
+    "s23": [
+      "s23",
+      "s23_aug1",
+      "s23_aug2"
+    ],
+    "s24": [
+      "s24",
+      "s24_aug1",
+      "s24_aug2"
+    ]
+  },
+  "val_folder_mapping": {
+    "s25": [
+      "s25",
+      "s25_aug1",
+      "s25_aug2",
+      "s25_aug3"
+    ],
+    "s26": [
+      "s26",
+      "s26_aug1",
+      "s26_aug2",
+      "s26_aug3"
+    ],
+    "s27": [
+      "s27",
+      "s27_aug1",
+      "s27_aug2"
+    ],
+    "s28": [
+      "s28",
+      "s28_aug1",
+      "s28_aug2"
+    ],
+    "s29": [
+      "s29",
+      "s29_aug1",
+      "s29_aug2"
+    ],
+    "s30": [
+      "s30",
+      "s30_aug1",
+      "s30_aug2"
+    ]
+  },
+  "train_folders": [
+    "s1",
+    "s1_aug1",
+    "s1_aug2",
+    "s1_aug3",
+    "s2",
+    "s2_aug1",
+    "s2_aug2",
+    "s2_aug3",
+    "s3",
+    "s3_aug1",
+    "s3_aug2",
+    "s3_aug3",
+    "s4",
+    "s4_aug1",
+    "s4_aug2",
+    "s4_aug3",
+    "s5",
+    "s5_aug1",
+    "s5_aug2",
+    "s5_aug3",
+    "s6",
+    "s6_aug1",
+    "s6_aug2",
+    "s6_aug3",
+    "s7",
+    "s7_aug1",
+    "s7_aug2",
+    "s7_aug3",
+    "s8",
+    "s8_aug1",
+    "s8_aug2",
+    "s8_aug3",
+    "s9",
+    "s9_aug1",
+    "s9_aug2",
+    "s10",
+    "s10_aug1",
+    "s10_aug2",
+    "s11",
+    "s11_aug1",
+    "s11_aug2",
+    "s12",
+    "s12_aug1",
+    "s12_aug2",
+    "s13",
+    "s13_aug1",
+    "s13_aug2",
+    "s14",
+    "s14_aug1",
+    "s14_aug2",
+    "s15",
+    "s15_aug1",
+    "s15_aug2",
+    "s16",
+    "s16_aug1",
+    "s16_aug2",
+    "s17",
+    "s17_aug1",
+    "s17_aug2",
+    "s18",
+    "s18_aug1",
+    "s18_aug2",
+    "s19",
+    "s19_aug1",
+    "s19_aug2",
+    "s20",
+    "s20_aug1",
+    "s20_aug2",
+    "s21",
+    "s21_aug1",
+    "s21_aug2",
+    "s22",
+    "s22_aug1",
+    "s22_aug2",
+    "s23",
+    "s23_aug1",
+    "s23_aug2",
+    "s24",
+    "s24_aug1",
+    "s24_aug2"
+  ],
+  "val_folders": [
+    "s25",
+    "s25_aug1",
+    "s25_aug2",
+    "s25_aug3",
+    "s26",
+    "s26_aug1",
+    "s26_aug2",
+    "s26_aug3",
+    "s27",
+    "s27_aug1",
+    "s27_aug2",
+    "s28",
+    "s28_aug1",
+    "s28_aug2",
+    "s29",
+    "s29_aug1",
+    "s29_aug2",
+    "s30",
+    "s30_aug1",
+    "s30_aug2"
+  ],
+  "zero_leakage_verified": true
+}

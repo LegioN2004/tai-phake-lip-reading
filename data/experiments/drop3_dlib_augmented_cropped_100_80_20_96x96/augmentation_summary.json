@@ -1,0 +1,15 @@
+{
+  "dataset_name": "drop3_dlib_augmented_cropped_100_80_20_96x96",
+  "total_folders": 100,
+  "train_folders_count": 80,
+  "val_folders_count": 20,
+  "train_frames_count": 37488,
+  "val_frames_count": 7367,
+  "total_frames_count": 44855,
+  "dimensions": [
+    96,
+    96,
+    3
+  ],
+  "elapsed_seconds": 11.01
+}
