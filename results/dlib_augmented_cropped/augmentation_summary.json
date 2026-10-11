@@ -1,5 +1,5 @@
 {
-  "dataset_name": "drop3_dlib_augmented_cropped_100_80_20_96x96",
+  "dataset_name": "dlib_augmented_cropped_100_80_20_96x96",
   "total_folders": 100,
   "train_folders_count": 80,
   "val_folders_count": 20,
