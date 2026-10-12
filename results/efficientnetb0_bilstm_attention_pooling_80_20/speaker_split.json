@@ -3,8 +3,8 @@
   "random_seed": 42,
   "num_train_folders": 80,
   "num_base_train_speakers": 24,
-  "num_val_folders": 20,
-  "num_base_val_speakers": 6,
+  "num_val_folders": 17,
+  "num_base_val_speakers": 5,
   "num_test_folders": 0,
   "num_base_test_speakers": 0,
   "base_train_speakers": [
@@ -118,7 +118,6 @@
   "base_val_speakers": [
     "s25",
     "s26",
-    "s27",
     "s28",
     "s29",
     "s30"
@@ -132,9 +131,6 @@
     "s26_aug1",
     "s26_aug2",
     "s26_aug3",
-    "s27",
-    "s27_aug1",
-    "s27_aug2",
     "s28",
     "s28_aug1",
     "s28_aug2",
