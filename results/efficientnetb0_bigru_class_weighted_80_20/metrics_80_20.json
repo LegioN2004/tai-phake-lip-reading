@@ -1,0 +1,39 @@
+{
+  "model_name": "EfficientNetB0_BiGRU_ClassWeighted",
+  "temporal_head": "BiGRU_128units_AttentionPooling",
+  "class_weights": {
+    "0": 1.0,
+    "1": 1.8,
+    "2": 1.6,
+    "3": 1.0,
+    "4": 1.8,
+    "5": 1.0,
+    "6": 1.2,
+    "7": 1.5,
+    "8": 1.0,
+    "9": 1.6,
+    "10": 1.0
+  },
+  "dataset_mode": "80_20",
+  "seed": 42,
+  "stage1": {
+    "best_epoch": 24,
+    "best_val_loss": 1.4678258895874023,
+    "best_val_accuracy": 0.6727272868156433,
+    "learning_rate": 0.0001
+  },
+  "stage2": {
+    "best_epoch": 6,
+    "best_val_loss": 1.490869164466858,
+    "best_val_accuracy": 0.668181836605072,
+    "learning_rate": 1e-05
+  },
+  "final_validation": {
+    "loss": 1.490869164466858,
+    "accuracy": 0.6636363863945007
+  },
+  "parameters": {
+    "total_params": 4677295,
+    "stage2_trainable_params": 2915228
+  }
+}
