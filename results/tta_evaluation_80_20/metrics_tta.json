@@ -1,0 +1,27 @@
+{
+  "experiment": "17_tta_evaluation",
+  "dataset_mode": "80_20",
+  "views": [
+    "original",
+    "shift_+2",
+    "shift_-2",
+    "horizontal_flip"
+  ],
+  "bilstm": {
+    "raw_accuracy": 0.6727272727272727,
+    "tta_accuracy": 0.6909090909090909,
+    "tta_macro_f1": 0.68259485672525,
+    "gain": 0.018181818181818188
+  },
+  "bigru": {
+    "raw_accuracy": 0.6954545454545454,
+    "tta_accuracy": 0.6909090909090909,
+    "tta_macro_f1": 0.6849030810691284,
+    "gain": -0.004545454545454519
+  },
+  "tta_ensemble": {
+    "accuracy": 0.7,
+    "macro_f1": 0.6995123089647274,
+    "gain_over_raw_bilstm": 0.027272727272727226
+  }
+}
