@@ -1,8 +1,8 @@
 {
   "dataset_mode": "80_20",
   "random_seed": 42,
-  "num_train_folders": 77,
-  "num_base_train_speakers": 23,
+  "num_train_folders": 74,
+  "num_base_train_speakers": 22,
   "num_val_folders": 20,
   "num_base_val_speakers": 6,
   "num_test_folders": 0,
@@ -29,8 +29,7 @@
     "s19",
     "s20",
     "s21",
-    "s22",
-    "s23"
+    "s22"
   ],
   "train_speakers": [
     "s1",
@@ -77,9 +76,6 @@
     "s22",
     "s22_aug1",
     "s22_aug2",
-    "s23",
-    "s23_aug1",
-    "s23_aug2",
     "s2_aug1",
     "s2_aug2",
     "s2_aug3",
@@ -112,14 +108,17 @@
     "s9_aug2"
   ],
   "base_val_speakers": [
+    "s23",
     "s24",
     "s25",
     "s26",
     "s28",
-    "s29",
     "s30"
   ],
   "val_speakers": [
+    "s23",
+    "s23_aug1",
+    "s23_aug2",
     "s24",
     "s24_aug1",
     "s24_aug2",
@@ -134,9 +133,6 @@
     "s28",
     "s28_aug1",
     "s28_aug2",
-    "s29",
-    "s29_aug1",
-    "s29_aug2",
     "s30",
     "s30_aug1",
     "s30_aug2"
