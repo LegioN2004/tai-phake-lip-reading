@@ -13,26 +13,26 @@
   },
   {
     "base_speaker": "s25",
-    "accuracy": 0.8636363636363636,
+    "accuracy": 0.8863636363636364,
     "total": 44,
-    "correct": 38
-  },
-  {
-    "base_speaker": "s26",
-    "accuracy": 0.5227272727272727,
-    "total": 44,
-    "correct": 23
-  },
-  {
-    "base_speaker": "s28",
-    "accuracy": 0.5757575757575758,
-    "total": 33,
-    "correct": 19
+    "correct": 39
   },
   {
     "base_speaker": "s30",
-    "accuracy": 0.7575757575757576,
+    "accuracy": 0.7878787878787878,
     "total": 33,
-    "correct": 25
+    "correct": 26
+  },
+  {
+    "base_speaker": "s43",
+    "accuracy": 0.25,
+    "total": 44,
+    "correct": 11
+  },
+  {
+    "base_speaker": "s45",
+    "accuracy": 0.5757575757575758,
+    "total": 33,
+    "correct": 19
   }
 ]
