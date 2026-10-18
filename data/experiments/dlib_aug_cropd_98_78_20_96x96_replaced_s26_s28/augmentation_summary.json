@@ -1,0 +1,15 @@
+{
+  "dataset_name": "dlib_aug_cropd_98_78_20_96x96_replaced_s26_s28",
+  "timestamp": "2026-10-18 13:34:57",
+  "target_resolution": "96x96",
+  "total_folders": 98,
+  "train_folders": 78,
+  "val_folders": 20,
+  "total_frames": 44904,
+  "train_frames": 37003,
+  "val_frames": 7901,
+  "original_frames": 12921,
+  "augmented_frames": 31983,
+  "dlib_landmark_success_rate": 0.9998452132187912,
+  "zero_leakage_verified": true
+}

@@ -59,9 +59,9 @@ TARGET_TRAIN_FOLDERS = 78
 TARGET_VAL_FOLDERS = 20
 TOTAL_TARGET_FOLDERS = TARGET_TRAIN_FOLDERS + TARGET_VAL_FOLDERS  # 98
 
-# Base Speakers: 22 Train, 6 Validation (s27 and s29 excluded)
+# Base Speakers: 22 Train, 6 Validation (s26 and s28 replaced with s43 and s45)
 TRAIN_BASE_SPEAKERS = [f"s{i}" for i in range(1, 23)]  # s1 through s22
-VAL_BASE_SPEAKERS = ["s23", "s24", "s25", "s26", "s28", "s30"]
+VAL_BASE_SPEAKERS = ["s23", "s24", "s25", "s30", "s43", "s45"]
 
 
 def natural_sort_key(s: str) -> int:
@@ -470,11 +470,11 @@ def main():
     # Train: 22 base speakers -> 78 folders (12 spk with 4 folders, 10 spk with 3 folders)
     train_mapping = build_speaker_folder_mapping(TRAIN_BASE_SPEAKERS, TARGET_TRAIN_FOLDERS)
 
-    # Val: 6 base speakers -> 20 folders (s25, s26 with 4 folders, s23, s24, s28, s30 with 3 folders)
+    # Val: 6 base speakers -> 20 folders (s25, s43 with 4 folders, s23, s24, s30, s45 with 3 folders)
     val_mapping = build_speaker_folder_mapping(
         VAL_BASE_SPEAKERS,
         TARGET_VAL_FOLDERS,
-        custom_four_folders=["s25", "s26"]
+        custom_four_folders=["s25", "s43"]
     )
 
     all_train_folders = sorted([f for dirs in train_mapping.values() for f in dirs], key=natural_sort_key)
@@ -491,7 +491,7 @@ def main():
 
     print("Speaker & Folder Allocation Verified:")
     print(f"  Train Folders ({len(all_train_folders)}): 12 spk x 4 ({TRAIN_BASE_SPEAKERS[:12]}) + 10 spk x 3 ({TRAIN_BASE_SPEAKERS[12:]})")
-    print(f"  Val Folders   ({len(all_val_folders)}): 2 spk x 4 (['s25', 's26']) + 4 spk x 3 (['s23', 's24', 's28', 's30'])")
+    print(f"  Val Folders   ({len(all_val_folders)}): 2 spk x 4 (['s25', 's43']) + 4 spk x 3 (['s23', 's24', 's30', 's45'])")
     print(f"  Total Folders : {len(all_98_folders)} directories")
     print("-" * 80)
 
