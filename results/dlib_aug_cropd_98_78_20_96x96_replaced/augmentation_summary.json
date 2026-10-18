@@ -1,0 +1,18 @@
+{
+  "dataset_name": "dlib_aug_cropd_98_78_20_96x96_replaced",
+  "generation_timestamp": "2026-10-17 21:51:36",
+  "total_speakers_generated": 98,
+  "target_total_speakers": 98,
+  "train_folders": 78,
+  "target_train_folders": 78,
+  "val_folders": 20,
+  "target_val_folders": 20,
+  "total_frames_generated": 44531,
+  "train_frames": 37003,
+  "val_frames": 7528,
+  "total_original_frames": 12808,
+  "total_augmented_frames": 31723,
+  "dlib_landmark_success_rate": 0.999843847595253,
+  "target_resolution": "96x96",
+  "zero_leakage_verified": true
+}

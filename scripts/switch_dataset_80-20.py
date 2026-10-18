@@ -20,6 +20,7 @@ Example:
 
 from __future__ import annotations
 
+import json
 import re
 import shutil
 import sys
@@ -124,24 +125,35 @@ def main():
         key=natural_sort_key,
     )
 
-    # Verify exactly 30 base speakers exist (s1 through s30)
-    if len(all_base_speakers) != 30:
-        print(f"Error: Expected 30 base speakers in dataset, but discovered {len(all_base_speakers)}.")
+    # Check for dataset-specific speaker_split.json
+    split_meta_file = source_dir / "speaker_split.json"
+    if split_meta_file.exists():
+        with open(split_meta_file, "r") as f:
+            split_meta = json.load(f)
+        configured_val_speakers = set(split_meta.get("base_val_speakers", []))
+        expected_total_base = split_meta.get("num_base_train_speakers", 0) + split_meta.get("num_base_val_speakers", 0)
+    else:
+        configured_val_speakers = VAL_SPEAKERS
+        expected_total_base = 30
+
+    # Verify discovered base speakers match expectations
+    if len(all_base_speakers) != expected_total_base:
+        print(f"Error: Expected {expected_total_base} base speakers in dataset, but discovered {len(all_base_speakers)}.")
         print(f"Discovered base speakers: {all_base_speakers}")
         sys.exit(1)
 
-    missing_val = VAL_SPEAKERS - set(all_base_speakers)
+    missing_val = configured_val_speakers - set(all_base_speakers)
     if missing_val:
         print(f"Error: {len(missing_val)} configured validation speakers not found in dataset:")
         print(f"  Missing: {sorted(missing_val, key=natural_sort_key)}")
         sys.exit(1)
 
     train_base_speakers = sorted(
-        [s for s in all_base_speakers if s not in VAL_SPEAKERS],
+        [s for s in all_base_speakers if s not in configured_val_speakers],
         key=natural_sort_key,
     )
     val_base_speakers = sorted(
-        [s for s in all_base_speakers if s in VAL_SPEAKERS],
+        [s for s in all_base_speakers if s in configured_val_speakers],
         key=natural_sort_key,
     )
 
@@ -155,7 +167,7 @@ def main():
         spk_name = spk_path.name
         base_spk = spk_name.split("_")[0]
 
-        if base_spk in VAL_SPEAKERS:
+        if base_spk in configured_val_speakers:
             target_link = VAL_DIR / spk_name
             target_link.symlink_to(spk_path.resolve())
             counts["val_dirs"] += 1
@@ -167,19 +179,20 @@ def main():
     # 4. Strict Validation Checks
     print("\nExecuting strict zero-leakage validation checks...")
 
-    # Check 1: Exactly 30 base speakers discovered
-    assert len(all_base_speakers) == 30, (
-        f"Validation failed: Expected 30 base speakers, found {len(all_base_speakers)}"
+    # Check 1: Expected base speakers discovered
+    assert len(all_base_speakers) == expected_total_base, (
+        f"Validation failed: Expected {expected_total_base} base speakers, found {len(all_base_speakers)}"
     )
 
-    # Check 2: Exactly 6 base speakers in validation
-    assert len(val_base_speakers) == 6, (
-        f"Validation failed: Expected 6 base val speakers, got {len(val_base_speakers)}"
+    # Check 2: Configured base speakers in validation
+    assert len(val_base_speakers) == len(configured_val_speakers), (
+        f"Validation failed: Expected {len(configured_val_speakers)} base val speakers, got {len(val_base_speakers)}"
     )
 
-    # Check 3: Exactly 24 base speakers in training
-    assert len(train_base_speakers) == 24, (
-        f"Validation failed: Expected 24 base train speakers, got {len(train_base_speakers)}"
+    # Check 3: Remaining base speakers in training
+    expected_train_count = expected_total_base - len(configured_val_speakers)
+    assert len(train_base_speakers) == expected_train_count, (
+        f"Validation failed: Expected {expected_train_count} base train speakers, got {len(train_base_speakers)}"
     )
 
     # Check 4: No base speaker exists in both splits
@@ -201,12 +214,12 @@ def main():
     )
 
     # Check 6 & 7: Zero cross-leakage of base or augmented folders
-    leaked_val_augs = [d for d in train_dir_names if d.split("_")[0] in VAL_SPEAKERS]
+    leaked_val_augs = [d for d in train_dir_names if d.split("_")[0] in configured_val_speakers]
     assert len(leaked_val_augs) == 0, (
         f"Validation failed: Validation speaker variants leaked into training: {leaked_val_augs}"
     )
 
-    leaked_train_augs = [d for d in val_dir_names if d.split("_")[0] not in VAL_SPEAKERS]
+    leaked_train_augs = [d for d in val_dir_names if d.split("_")[0] not in configured_val_speakers]
     assert len(leaked_train_augs) == 0, (
         f"Validation failed: Training speaker variants leaked into validation: {leaked_train_augs}"
     )
@@ -221,9 +234,9 @@ def main():
 
     # 5. Output Summary
     print("\n" + "=" * 80)
-    print("Training base speakers (24):")
+    print(f"Training base speakers ({len(train_base_speakers)}):")
     print(", ".join(train_base_speakers))
-    print("\nValidation base speakers (6):")
+    print(f"\nValidation base speakers ({len(val_base_speakers)}):")
     print(", ".join(val_base_speakers))
     print("=" * 80)
 
