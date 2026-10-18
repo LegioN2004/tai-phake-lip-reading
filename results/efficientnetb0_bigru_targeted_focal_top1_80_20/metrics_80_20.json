@@ -1,0 +1,46 @@
+{
+  "experiment": "20_efficientnetb0_bigru_targeted_focal_top1",
+  "dataset_mode": "80_20",
+  "seed": 42,
+  "frame_channels": 4,
+  "motion_diff_applied": true,
+  "temporal_jitter_applied": true,
+  "targeted_augmentation_applied": true,
+  "targeted_digits": [
+    1,
+    4,
+    9
+  ],
+  "class_weights": [
+    1.0,
+    1.5,
+    1.0,
+    1.0,
+    1.5,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.5,
+    0.5
+  ],
+  "loss": "WeightedCategoricalFocalLoss",
+  "evaluation_mode": "Top-1 Snapshot + 4-View TTA",
+  "top1_snapshot": "stage2_epoch_10_loss_0.3165.weights.h5",
+  "metrics": {
+    "val_accuracy": 0.6909090909090909,
+    "macro_f1": 0.6595672283069406,
+    "macro_precision": 0.7028406347283384,
+    "macro_recall": 0.6909090909090909
+  },
+  "stages": {
+    "stage1_best_epoch": 35,
+    "stage1_best_loss": 0.33126938343048096,
+    "stage1_best_acc": 0.6727272868156433,
+    "stage1_elapsed": 3436.2234270572662,
+    "stage2_best_epoch": 10,
+    "stage2_best_loss": 0.31651031970977783,
+    "stage2_best_acc": 0.6954545378684998,
+    "stage2_elapsed": 1497.248430967331
+  }
+}
