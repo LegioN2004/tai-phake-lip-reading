@@ -11,17 +11,17 @@
   "top_k_snapshots": 3,
   "tta_views": 4,
   "metrics": {
-    "val_accuracy": 0.6863636363636364,
-    "macro_f1": 0.6991710309892128,
-    "macro_precision": 0.7521616541353384,
-    "macro_recall": 0.6863636363636364
+    "val_accuracy": 0.6727272727272727,
+    "macro_f1": 0.6818426529869577,
+    "macro_precision": 0.7185622458349731,
+    "macro_recall": 0.6727272727272727
   },
   "stages": {
-    "stage1_best_epoch": 22,
-    "stage1_best_loss": 0.2834736108779907,
+    "stage1_best_epoch": 29,
+    "stage1_best_loss": 0.23813514411449432,
     "stage1_best_acc": 0.6909090876579285,
-    "stage2_best_epoch": 3,
-    "stage2_best_loss": 0.2962263524532318,
-    "stage2_best_acc": 0.6909090876579285
+    "stage2_best_epoch": 5,
+    "stage2_best_loss": 0.24037425220012665,
+    "stage2_best_acc": 0.6772727370262146
   }
 }
