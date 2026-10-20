@@ -22,6 +22,7 @@
 *.flac
 *.m4a
 *.jpg
+*.zip
 
 # Frame and image files in data directories
 data/*
