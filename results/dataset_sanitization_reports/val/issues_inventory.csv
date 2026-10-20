@@ -1,0 +1,5 @@
+severity,issue_type,speaker,digit,file_name,path,details,recommendation
+WARNING,LOW_FRAME_COUNT,s48,d0,13 frames,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed/val/s48/d0,Only 13 frames found (expected 25-50 frames).,Check if video was trimmed too aggressively.
+WARNING,LOW_FRAME_COUNT,s48_aug1,d0,13 frames,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed/val/s48_aug1/d0,Only 13 frames found (expected 25-50 frames).,Check if video was trimmed too aggressively.
+WARNING,LOW_FRAME_COUNT,s48_aug2,d0,13 frames,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed/val/s48_aug2/d0,Only 13 frames found (expected 25-50 frames).,Check if video was trimmed too aggressively.
+WARNING,LOW_FRAME_COUNT,s48_aug3,d0,13 frames,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed/val/s48_aug3/d0,Only 13 frames found (expected 25-50 frames).,Check if video was trimmed too aggressively.

@@ -1,0 +1,12 @@
+speaker,digit,video_path,status,extracted_count,error
+s38,d0,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/digit_videos_only/s38/d0/d0_001.mp4,SUCCESS,31,
+s38,d1,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/digit_videos_only/s38/d1/d1.mp4,SUCCESS,47,
+s38,d2,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/digit_videos_only/s38/d2/d2.mp4,SUCCESS,45,
+s38,d3,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/digit_videos_only/s38/d3/d3_001.mp4,SUCCESS,33,
+s38,d4,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/digit_videos_only/s38/d4/d4_001.mp4,SUCCESS,43,
+s38,d5,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/digit_videos_only/s38/d5/d5_001.mp4,SUCCESS,49,
+s38,d6,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/digit_videos_only/s38/d6/d6.mp4,SUCCESS,43,
+s38,d7,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/digit_videos_only/s38/d7/d7.mp4,SUCCESS,45,
+s38,d8,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/digit_videos_only/s38/d8/d8_002.mp4,SUCCESS,26,
+s38,d9,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/digit_videos_only/s38/d9/d9_003.mp4,SUCCESS,29,
+s38,d10,/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/digit_videos_only/s38/d10/d10_002.mp4,SUCCESS,29,

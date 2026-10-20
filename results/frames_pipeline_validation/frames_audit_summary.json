@@ -1,0 +1,74 @@
+{
+  "raw_extracted_dir": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/extracted_raw_frames",
+  "cropped_dir": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/dlib_augmented_cropped_100_80_20_96x96",
+  "raw_speakers_count": 30,
+  "cropped_folders_count": 100,
+  "critical_issues_count": 0,
+  "warnings_count": 7,
+  "verdict": "PASS",
+  "issues": [
+    {
+      "stage": "CROPPED",
+      "severity": "WARNING",
+      "issue_type": "BLANK_BLACK_FRAME",
+      "speaker_or_folder": "s14",
+      "digit": "d6",
+      "details": "Frame appears nearly solid black or flat (mean=0.0, std=0.0)",
+      "path": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/dlib_augmented_cropped_100_80_20_96x96/s14/d6/frame_0001.jpg"
+    },
+    {
+      "stage": "CROPPED",
+      "severity": "WARNING",
+      "issue_type": "BLANK_BLACK_FRAME",
+      "speaker_or_folder": "s14_aug1",
+      "digit": "d6",
+      "details": "Frame appears nearly solid black or flat (mean=8.0, std=0.0)",
+      "path": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/dlib_augmented_cropped_100_80_20_96x96/s14_aug1/d6/frame_0001.jpg"
+    },
+    {
+      "stage": "CROPPED",
+      "severity": "WARNING",
+      "issue_type": "BLANK_BLACK_FRAME",
+      "speaker_or_folder": "s14_aug2",
+      "digit": "d6",
+      "details": "Frame appears nearly solid black or flat (mean=7.0, std=0.0)",
+      "path": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/dlib_augmented_cropped_100_80_20_96x96/s14_aug2/d6/frame_0001.jpg"
+    },
+    {
+      "stage": "CROPPED",
+      "severity": "WARNING",
+      "issue_type": "BLANK_BLACK_FRAME",
+      "speaker_or_folder": "s4",
+      "digit": "d9",
+      "details": "Frame appears nearly solid black or flat (mean=0.0, std=0.0)",
+      "path": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/dlib_augmented_cropped_100_80_20_96x96/s4/d9/frame_0001.jpg"
+    },
+    {
+      "stage": "CROPPED",
+      "severity": "WARNING",
+      "issue_type": "BLANK_BLACK_FRAME",
+      "speaker_or_folder": "s4_aug1",
+      "digit": "d9",
+      "details": "Frame appears nearly solid black or flat (mean=0.3, std=0.5)",
+      "path": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/dlib_augmented_cropped_100_80_20_96x96/s4_aug1/d9/frame_0001.jpg"
+    },
+    {
+      "stage": "CROPPED",
+      "severity": "WARNING",
+      "issue_type": "BLANK_BLACK_FRAME",
+      "speaker_or_folder": "s4_aug2",
+      "digit": "d9",
+      "details": "Frame appears nearly solid black or flat (mean=0.5, std=0.5)",
+      "path": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/dlib_augmented_cropped_100_80_20_96x96/s4_aug2/d9/frame_0001.jpg"
+    },
+    {
+      "stage": "CROPPED",
+      "severity": "WARNING",
+      "issue_type": "BLANK_BLACK_FRAME",
+      "speaker_or_folder": "s4_aug3",
+      "digit": "d9",
+      "details": "Frame appears nearly solid black or flat (mean=2.0, std=0.0)",
+      "path": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/experiments/dlib_augmented_cropped_100_80_20_96x96/s4_aug3/d9/frame_0001.jpg"
+    }
+  ]
+}

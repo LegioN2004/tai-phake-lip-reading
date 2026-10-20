@@ -1,0 +1,73 @@
+{
+  "target_directory": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed/val",
+  "dataset_mode": "FRAMES",
+  "total_speakers": 21,
+  "speakers_list": [
+    "S35",
+    "S35_aug1",
+    "S35_aug2",
+    "S35_aug3",
+    "s34",
+    "s34_aug1",
+    "s34_aug2",
+    "s34_aug3",
+    "s38",
+    "s38_aug1",
+    "s38_aug2",
+    "s45",
+    "s45_aug1",
+    "s45_aug2",
+    "s47",
+    "s47_aug1",
+    "s47_aug2",
+    "s48",
+    "s48_aug1",
+    "s48_aug2",
+    "s48_aug3"
+  ],
+  "total_critical_issues": 0,
+  "total_warnings": 4,
+  "verdict": "PASS WITH WARNINGS",
+  "issues": [
+    {
+      "severity": "WARNING",
+      "issue_type": "LOW_FRAME_COUNT",
+      "speaker": "s48",
+      "digit": "d0",
+      "file_name": "13 frames",
+      "path": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed/val/s48/d0",
+      "details": "Only 13 frames found (expected 25-50 frames).",
+      "recommendation": "Check if video was trimmed too aggressively."
+    },
+    {
+      "severity": "WARNING",
+      "issue_type": "LOW_FRAME_COUNT",
+      "speaker": "s48_aug1",
+      "digit": "d0",
+      "file_name": "13 frames",
+      "path": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed/val/s48_aug1/d0",
+      "details": "Only 13 frames found (expected 25-50 frames).",
+      "recommendation": "Check if video was trimmed too aggressively."
+    },
+    {
+      "severity": "WARNING",
+      "issue_type": "LOW_FRAME_COUNT",
+      "speaker": "s48_aug2",
+      "digit": "d0",
+      "file_name": "13 frames",
+      "path": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed/val/s48_aug2/d0",
+      "details": "Only 13 frames found (expected 25-50 frames).",
+      "recommendation": "Check if video was trimmed too aggressively."
+    },
+    {
+      "severity": "WARNING",
+      "issue_type": "LOW_FRAME_COUNT",
+      "speaker": "s48_aug3",
+      "digit": "d0",
+      "file_name": "13 frames",
+      "path": "/Users/milinda/ghq/github.com/legion2004/tai-phake-lip-reading/data/processed/val/s48_aug3/d0",
+      "details": "Only 13 frames found (expected 25-50 frames).",
+      "recommendation": "Check if video was trimmed too aggressively."
+    }
+  ]
+}

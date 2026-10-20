@@ -1,7 +1,6 @@
 {
   "dataset_name": "dlib_augmented_cropped_100_80_20_96x96",
   "dataset_mode": "100_80_20",
-  "random_seed": 42,
   "num_total_folders": 100,
   "num_train_folders": 80,
   "num_base_train_speakers": 24,
@@ -248,10 +247,10 @@
   "base_val_speakers": [
     "s34",
     "S35",
-    "s40",
-    "S41",
+    "S38",
     "s45",
-    "s47"
+    "s47",
+    "s48"
   ],
   "val_speakers": [
     "s34",
@@ -262,18 +261,18 @@
     "S35_aug1",
     "S35_aug2",
     "S35_aug3",
-    "s40",
-    "s40_aug1",
-    "s40_aug2",
-    "S41",
-    "S41_aug1",
-    "S41_aug2",
+    "S38",
+    "S38_aug1",
+    "S38_aug2",
     "s45",
     "s45_aug1",
     "s45_aug2",
     "s47",
     "s47_aug1",
-    "s47_aug2"
+    "s47_aug2",
+    "s48",
+    "s48_aug1",
+    "s48_aug2"
   ],
   "val_speaker_mapping": {
     "s34": [
@@ -288,15 +287,10 @@
       "S35_aug2",
       "S35_aug3"
     ],
-    "s40": [
-      "s40",
-      "s40_aug1",
-      "s40_aug2"
-    ],
-    "S41": [
-      "S41",
-      "S41_aug1",
-      "S41_aug2"
+    "S38": [
+      "S38",
+      "S38_aug1",
+      "S38_aug2"
     ],
     "s45": [
       "s45",
@@ -307,6 +301,11 @@
       "s47",
       "s47_aug1",
       "s47_aug2"
+    ],
+    "s48": [
+      "s48",
+      "s48_aug1",
+      "s48_aug2"
     ]
   },
   "base_test_speakers": [],

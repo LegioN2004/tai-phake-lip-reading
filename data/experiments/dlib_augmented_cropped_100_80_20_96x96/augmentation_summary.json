@@ -1,15 +1,15 @@
 {
   "dataset_name": "dlib_augmented_cropped_100_80_20_96x96",
-  "timestamp": "2026-10-20 13:31:14",
+  "timestamp": "2026-10-20 21:38:23",
   "target_resolution": "96x96",
   "total_folders": 100,
   "train_folders": 80,
   "val_folders": 20,
-  "total_frames": 43316,
-  "train_frames": 35218,
-  "val_frames": 8098,
-  "original_frames": 13055,
-  "augmented_frames": 30261,
-  "dlib_landmark_success_rate": 0.9998468019915742,
+  "total_frames": 43340,
+  "train_frames": 35215,
+  "val_frames": 8125,
+  "original_frames": 13063,
+  "augmented_frames": 30277,
+  "dlib_landmark_success_rate": 0.9998468958126004,
   "zero_leakage_verified": true
 }
