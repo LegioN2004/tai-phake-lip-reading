@@ -64,6 +64,8 @@ results/**/*.keras
 results/**/*.h5
 results/**/*.pth
 results/**/*.pt
+*.npy
+results/**/*.npy
 
 # ------------------------------------------------------------------------------
 # 3. Python Cache, Build, & Virtual Environments (UV / Python 3.12)
