@@ -1,0 +1,70 @@
+{
+  "experiment": "22_efficientnetb0_bigru_triwindow_signed_motion",
+  "dataset_mode": "80_20",
+  "seed": 42,
+  "total_validation_utterances": 220,
+  "ablation": {
+    "val_accuracy_top1_single_view": 0.6772727272727272,
+    "val_accuracy_top1_tta": 0.6909090909090909,
+    "val_accuracy_snapshot_single_view": 0.6772727272727272,
+    "val_accuracy_snapshot_tta": 0.6909090909090909
+  },
+  "macro_precision": 0.728336645868191,
+  "macro_recall": 0.6909090909090909,
+  "macro_f1": 0.6828989776182548,
+  "total_correct": 152,
+  "stage1_best_val_acc": 0.6590909361839294,
+  "stage2_best_val_acc": 0.6772727370262146,
+  "tri_windows": {
+    "onset_window": [
+      0,
+      12
+    ],
+    "nucleus_window": [
+      9,
+      21
+    ],
+    "coda_window": [
+      18,
+      30
+    ]
+  },
+  "per_speaker_breakdown": [
+    {
+      "base_speaker": "S35",
+      "accuracy": 0.7272727272727273,
+      "correct": 32,
+      "total": 44
+    },
+    {
+      "base_speaker": "S38",
+      "accuracy": 0.6666666666666666,
+      "correct": 22,
+      "total": 33
+    },
+    {
+      "base_speaker": "s34",
+      "accuracy": 0.7045454545454546,
+      "correct": 31,
+      "total": 44
+    },
+    {
+      "base_speaker": "s45",
+      "accuracy": 0.696969696969697,
+      "correct": 23,
+      "total": 33
+    },
+    {
+      "base_speaker": "s47",
+      "accuracy": 0.7272727272727273,
+      "correct": 24,
+      "total": 33
+    },
+    {
+      "base_speaker": "s48",
+      "accuracy": 0.6060606060606061,
+      "correct": 20,
+      "total": 33
+    }
+  ]
+}

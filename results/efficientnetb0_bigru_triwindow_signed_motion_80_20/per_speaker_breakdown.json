@@ -1,0 +1,38 @@
+[
+  {
+    "base_speaker": "S35",
+    "accuracy": 0.7272727272727273,
+    "correct": 32,
+    "total": 44
+  },
+  {
+    "base_speaker": "S38",
+    "accuracy": 0.6666666666666666,
+    "correct": 22,
+    "total": 33
+  },
+  {
+    "base_speaker": "s34",
+    "accuracy": 0.7045454545454546,
+    "correct": 31,
+    "total": 44
+  },
+  {
+    "base_speaker": "s45",
+    "accuracy": 0.696969696969697,
+    "correct": 23,
+    "total": 33
+  },
+  {
+    "base_speaker": "s47",
+    "accuracy": 0.7272727272727273,
+    "correct": 24,
+    "total": 33
+  },
+  {
+    "base_speaker": "s48",
+    "accuracy": 0.6060606060606061,
+    "correct": 20,
+    "total": 33
+  }
+]
