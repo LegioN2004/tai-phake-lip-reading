@@ -1,0 +1,55 @@
+{
+  "experiment_name": "efficientnetb0_bigru_calibrated_triwindow_dual_motion",
+  "val_accuracy": 0.6727272727272727,
+  "correct_samples": 148,
+  "total_samples": 220,
+  "macro_f1": 0.6686371954684303,
+  "weighted_f1": 0.6686371954684303,
+  "calibrated_windows": {
+    "onset": [
+      0,
+      10
+    ],
+    "nucleus": [
+      7,
+      19
+    ],
+    "coda": [
+      13,
+      30
+    ]
+  },
+  "dual_motion_channels": 5,
+  "per_speaker_accuracy": {
+    "S35": {
+      "correct": 29,
+      "total": 44,
+      "accuracy": 0.6590909090909091
+    },
+    "S38": {
+      "correct": 19,
+      "total": 33,
+      "accuracy": 0.5757575757575758
+    },
+    "s34": {
+      "correct": 33,
+      "total": 44,
+      "accuracy": 0.75
+    },
+    "s45": {
+      "correct": 21,
+      "total": 33,
+      "accuracy": 0.6363636363636364
+    },
+    "s47": {
+      "correct": 26,
+      "total": 33,
+      "accuracy": 0.7878787878787878
+    },
+    "s48": {
+      "correct": 20,
+      "total": 33,
+      "accuracy": 0.6060606060606061
+    }
+  }
+}

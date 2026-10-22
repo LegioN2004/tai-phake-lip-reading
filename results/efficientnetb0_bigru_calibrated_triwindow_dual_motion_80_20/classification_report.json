@@ -1,0 +1,81 @@
+{
+  "Pau (0)": {
+    "precision": 0.6153846153846154,
+    "recall": 0.8,
+    "f1-score": 0.6956521739130435,
+    "support": 20.0
+  },
+  "Nung (1)": {
+    "precision": 0.8,
+    "recall": 0.6,
+    "f1-score": 0.6857142857142857,
+    "support": 20.0
+  },
+  "Saung (2)": {
+    "precision": 0.45454545454545453,
+    "recall": 0.25,
+    "f1-score": 0.3225806451612903,
+    "support": 20.0
+  },
+  "Sam (3)": {
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1-score": 0.75,
+    "support": 20.0
+  },
+  "Si (4)": {
+    "precision": 0.5454545454545454,
+    "recall": 0.9,
+    "f1-score": 0.6792452830188679,
+    "support": 20.0
+  },
+  "Ha (5)": {
+    "precision": 0.85,
+    "recall": 0.85,
+    "f1-score": 0.85,
+    "support": 20.0
+  },
+  "Hok (6)": {
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1-score": 0.8571428571428571,
+    "support": 20.0
+  },
+  "Chit (7)": {
+    "precision": 0.6470588235294118,
+    "recall": 0.55,
+    "f1-score": 0.5945945945945946,
+    "support": 20.0
+  },
+  "Pet (8)": {
+    "precision": 0.6666666666666666,
+    "recall": 0.9,
+    "f1-score": 0.7659574468085106,
+    "support": 20.0
+  },
+  "Kao (9)": {
+    "precision": 0.4,
+    "recall": 0.5,
+    "f1-score": 0.4444444444444444,
+    "support": 20.0
+  },
+  "Sip (10)": {
+    "precision": 1.0,
+    "recall": 0.55,
+    "f1-score": 0.7096774193548387,
+    "support": 20.0
+  },
+  "accuracy": 0.6727272727272727,
+  "macro avg": {
+    "precision": 0.7026463732346085,
+    "recall": 0.6727272727272727,
+    "f1-score": 0.6686371954684303,
+    "support": 220.0
+  },
+  "weighted avg": {
+    "precision": 0.7026463732346084,
+    "recall": 0.6727272727272727,
+    "f1-score": 0.6686371954684303,
+    "support": 220.0
+  }
+}
