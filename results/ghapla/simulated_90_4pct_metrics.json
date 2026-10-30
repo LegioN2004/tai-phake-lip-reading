@@ -1,0 +1,18 @@
+{
+  "audit_type": "HYPOTHETICAL_FEASIBILITY_AUDIT_NOT_REAL_TRAINING",
+  "simulated_validation_accuracy": 0.9045,
+  "accuracy_pct": "90.45%",
+  "total_evaluated_samples": 220,
+  "correct_samples": 199,
+  "total_errors_allowed": 21,
+  "macro_precision": 0.9092,
+  "macro_recall": 0.9045,
+  "macro_f1": 0.9049,
+  "verdict": "SCIENTIFICALLY_IMPLAUSIBLE_GHAPLA",
+  "reasons": [
+    "Requires 90% recall on d4 despite speaker s25 physically pronouncing Sip (coda closure)",
+    "Requires 85% recall on d1 despite speakers s14 and s23 displaying <2px lip movement (motionless mumbles)",
+    "Requires 80% recall on d9 despite initial velar /k/ being articulated invisibly at the soft palate",
+    "Contradicts empirical Bayes error ceiling (~85%) on silent isolated visual speech"
+  ]
+}

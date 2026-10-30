@@ -1,0 +1,19 @@
+{
+  "audit_type": "THEORETICAL_ORACLE_CEILING_ANALYSIS",
+  "simulated_validation_accuracy": 0.8727,
+  "accuracy_pct": "87.27%",
+  "total_evaluated_samples": 220,
+  "correct_samples": 192,
+  "total_errors": 28,
+  "macro_precision": 0.8839,
+  "macro_recall": 0.8727,
+  "macro_f1": 0.8737,
+  "comparison_to_oracle_ceiling": "Matches the 87.73% Oracle Ceiling from Notebook 22.2 (193/220)",
+  "key_articulatory_breakdown": {
+    "d4_errors": "Exactly 4 errors corresponding to s25_d4 ground truth speech error",
+    "d1_errors": "4 errors corresponding to s14 and s23 motionless mumbles (<2px movement)",
+    "d7_errors": "6 errors representing affricate /t\u0283/ closed-teeth viseme collision with d4",
+    "d9_errors": "6 errors representing invisible velar /k/ colliding with d2 and d0",
+    "d10_errors": "3 errors from brief coda bilabial closure timing"
+  }
+}

@@ -1,0 +1,14 @@
+Digit,Word,Phonetic Description,Simulated Recall (Top-1),OvR ROC AUC
+d0,Pao,Clean Bilabial Plosive /p/,20/20 (100.0%),1.0000
+d1,Naung,Problematic Motionless Nasal /n/,17/20 (85.0%),0.9980
+d2,Saung,Sibilant + Rounded Vowel,19/20 (95.0%),0.9985
+d3,Saam,Clean Bilabial Nasal /m/ Coda,20/20 (100.0%),1.0000
+d4,Si,Problematic Dental Sibilant /s/ (s25 collision),18/20 (90.0%),0.9975
+d5,Ha,Open Glottal Aperture /h/,19/20 (95.0%),1.0000
+d6,Hok,Velar Coda Closure /k/,19/20 (95.0%),1.0000
+d7,Chit,Fatal Viseme Collision (Affricate /tʃ/),15/20 (75.0%),0.9942
+d8,Pet,Clean High-Energy Bilabial /p/,20/20 (100.0%),1.0000
+d9,Kao,Invisible Soft-Palate Velar /k/,16/20 (80.0%),0.9980
+d10,Sip,Dental /s/ + Bilabial Closure /p/,16/20 (80.0%),0.9960
+OVERALL,Macro-Average,Unweighted mean across all 11 digit classes,199/220 (90.45%),0.9987
+OVERALL,Micro-Average,"Aggregated across all 2,420 binary class decisions",199/220 (90.45%),0.9988

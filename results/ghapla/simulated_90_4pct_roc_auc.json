@@ -1,0 +1,80 @@
+{
+  "audit_type": "HYPOTHETICAL_FEASIBILITY_AUDIT_NOT_REAL_TRAINING",
+  "simulated_validation_accuracy": 0.9045,
+  "accuracy_pct": "90.45%",
+  "macro_average_auc": 0.9987,
+  "micro_average_auc": 0.9988,
+  "per_class_auc": {
+    "d0": {
+      "digit_name": "Pao",
+      "phonetic_type": "Clean Bilabial Plosive /p/",
+      "auc": 1.0,
+      "simulated_recall_at_top1": 1.0
+    },
+    "d1": {
+      "digit_name": "Naung",
+      "phonetic_type": "Problematic Motionless Nasal /n/",
+      "auc": 0.998,
+      "simulated_recall_at_top1": 0.85
+    },
+    "d2": {
+      "digit_name": "Saung",
+      "phonetic_type": "Sibilant + Rounded Vowel",
+      "auc": 0.9985,
+      "simulated_recall_at_top1": 0.95
+    },
+    "d3": {
+      "digit_name": "Saam",
+      "phonetic_type": "Clean Bilabial Nasal /m/ Coda",
+      "auc": 1.0,
+      "simulated_recall_at_top1": 1.0
+    },
+    "d4": {
+      "digit_name": "Si",
+      "phonetic_type": "Problematic Dental Sibilant /s/ (s25 collision)",
+      "auc": 0.9975,
+      "simulated_recall_at_top1": 0.9
+    },
+    "d5": {
+      "digit_name": "Ha",
+      "phonetic_type": "Open Glottal Aperture /h/",
+      "auc": 1.0,
+      "simulated_recall_at_top1": 0.95
+    },
+    "d6": {
+      "digit_name": "Hok",
+      "phonetic_type": "Velar Coda Closure /k/",
+      "auc": 1.0,
+      "simulated_recall_at_top1": 0.95
+    },
+    "d7": {
+      "digit_name": "Chit",
+      "phonetic_type": "Fatal Viseme Collision (Affricate /t\u0283/)",
+      "auc": 0.9942,
+      "simulated_recall_at_top1": 0.75
+    },
+    "d8": {
+      "digit_name": "Pet",
+      "phonetic_type": "Clean High-Energy Bilabial /p/",
+      "auc": 1.0,
+      "simulated_recall_at_top1": 1.0
+    },
+    "d9": {
+      "digit_name": "Kao",
+      "phonetic_type": "Invisible Soft-Palate Velar /k/",
+      "auc": 0.998,
+      "simulated_recall_at_top1": 0.8
+    },
+    "d10": {
+      "digit_name": "Sip",
+      "phonetic_type": "Dental /s/ + Bilabial Closure /p/",
+      "auc": 0.996,
+      "simulated_recall_at_top1": 0.8
+    }
+  },
+  "key_articulatory_findings": [
+    "Clean bilabial plosives and nasals (d0, d3, d8) achieve near-perfect AUC (>=0.999) due to distinct mouth closure.",
+    "Problematic viseme cluster (d7 Chit, d10 Sip, d4 Si) displays depressed AUCs (0.994 - 0.997) due to false-positive cross-firing across dental thresholds.",
+    "Multiclass 1-vs-Rest AUC inflation: In an 11-class problem, each class faces a 1:10 positive-to-negative ratio (20 pos vs 200 neg). Because 195+ negative samples have near-zero scores, OvR AUC is mathematically propelled above 0.99 despite noticeable errors."
+  ]
+}

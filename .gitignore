@@ -161,3 +161,10 @@ results/mediapipe_preview/contact_sheet_s30_d0.png
 results/mediapipe_preview/contact_sheet_s30_d5.png
 results/mediapipe_preview/contact_sheet_s30_d10.png
 results/mediapipe_preview/mediapipe_crop_report.csv
+journal/out/main.aux
+journal/out/main.bbl
+journal/out/main.blg
+journal/out/main.fdb_latexmk
+journal/out/main.fls
+journal/out/main.log
+journal/out/main.pdf
