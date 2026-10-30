@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-29T06:00:00.000Z" agent="Antigravity IEEE Visual Speech Recognition Diagram Generator" version="24.7.17">
+  <diagram id="page_horizontal_comparison" name="Horizontal VSR Comparison">
+    <mxGraphModel dx="1500" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2100" pageHeight="720" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="canvas_white_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="2100" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="fig_title" value="&lt;b&gt;COMPARATIVE ARCHITECTURES FOR TAI PHAKE VISUAL SPEECH RECOGNITION&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px; font-weight: normal; color: #475569;&quot;&gt;Three independent end-to-end pipelines sharing identical spatial front-ends and dense classification heads; temporal modules visually highlighted as the only architectural difference.&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=13;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="2020" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="row_A" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="75" width="2020" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="card_title_A" value="Model A&lt;br&gt;(BiLSTM)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11.5;fontStyle=1;fontColor=#0F172A;strokeColor=#1E293B;strokeWidth=1.6;fillColor=#F1F5F9;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="55" y="117" width="110" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="top_input_A" value="&lt;b&gt;Input Video Tensor&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #64748B;&quot;&gt;(Batch, 30, 128, 128, 3)&lt;br&gt;3-Ch RGB&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="185" y="117" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="top_effnet_A" value="&lt;b&gt;EfficientNet-B0&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #475569;&quot;&gt;Frame-level&lt;br&gt;ImageNet, frozen BN&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="330" y="117" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="top_gap_A" value="&lt;b&gt;Global Average Pool&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #475569;&quot;&gt;1280-D per frame&lt;br&gt;(Batch, 30, 1280)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="475" y="117" width="120" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="top_seq_A" value="&lt;b&gt;Sequence Tensor&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; font-weight: bold; color: #0F172A;&quot;&gt;30 feature vectors&lt;br&gt;(Batch, 30, 1280)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="615" y="117" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="e_top_1_A" value="(Batch, 30, 128, 128, 3)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_input_A" target="top_effnet_A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_top_2_A" value="(Batch, 30, 1280)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_effnet_A" target="top_gap_A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_top_3_A" value="(Batch, 30, 1280)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_gap_A" target="top_seq_A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bg_mid_A" value="TEMPORAL MODULE (DIFFERING COMPONENT  |  1.44 M params)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#93C5FD;strokeWidth=1.4;dashed=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontFamily=Helvetica;fontSize=8.5;fontStyle=1;fontColor=#1D4ED8;" vertex="1" parent="1">
+          <mxGeometry x="765" y="87" width="450" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="mid_core_A" value="&lt;b&gt;1-layer BiLSTM&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #1E3A8A;&quot;&gt;128 units/dir (256 total), input_dim=1280  ⇄&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; font-weight: bold; color: #1D4ED8;&quot;&gt;[ 1.44 M params ]&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#1E3A8A;strokeColor=#1D4ED8;strokeWidth=1.8;fillColor=#EFF6FF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="785" y="117" width="190" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="mid_state_A" value="&lt;b&gt;Last Hidden State&lt;br&gt;(256-D)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #1E3A8A;&quot;&gt;(Batch, 256)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#1E3A8A;strokeColor=#1D4ED8;strokeWidth=1.8;fillColor=#EFF6FF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="117" width="150" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mid_in_A" value="(Batch, 30, 1280)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_seq_A" target="mid_core_A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mid_core_to_state_A" value="(Batch, 30, 256)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="mid_core_A" target="mid_state_A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mid_out_A" value="(Batch, 256)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="mid_state_A" target="bot_drop_A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bot_drop_A" value="&lt;b&gt;Dropout&lt;br&gt;(rate = 0.4)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1325" y="117" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="bot_fc_A" value="&lt;b&gt;FC 256 &amp;rarr; 11&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #475569;&quot;&gt;Dense layer&lt;br&gt;(2,827 params)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1475" y="117" width="95" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="bot_softmax_A" value="&lt;b&gt;Softmax&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #475569;&quot;&gt;Posterior prob.&lt;br&gt;11 classes&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1595" y="117" width="85" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="bot_out_A" value="&lt;b&gt;11 classes&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #0F172A;&quot;&gt;Tai Phake digits&lt;br&gt;d0 (Pau) … d10 (Sip)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontStyle=1;fontColor=#0F172A;strokeColor=#0F172A;strokeWidth=1.5;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1705" y="117" width="115" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bot_1_A" value="(Batch, 256)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bot_drop_A" target="bot_fc_A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bot_2_A" value="(Batch, 11)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bot_fc_A" target="bot_softmax_A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bot_3_A" value="(Batch, 11)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bot_softmax_A" target="bot_out_A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="summary_bottom_A" value="Total Parameters:&lt;br&gt;&lt;b&gt;6.75 M&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontStyle=1;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.4;fillColor=#F1F5F9;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1845" y="117" width="115" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row_B" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="235" width="2020" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="card_title_B" value="Model B&lt;br&gt;(BiGRU)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11.5;fontStyle=1;fontColor=#0F172A;strokeColor=#1E293B;strokeWidth=1.6;fillColor=#F1F5F9;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="55" y="277" width="110" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="top_input_B" value="&lt;b&gt;Input Video Tensor&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #64748B;&quot;&gt;(Batch, 30, 128, 128, 3)&lt;br&gt;3-Ch RGB&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="185" y="277" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="top_effnet_B" value="&lt;b&gt;EfficientNet-B0&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #475569;&quot;&gt;Frame-level&lt;br&gt;ImageNet, frozen BN&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="330" y="277" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="top_gap_B" value="&lt;b&gt;Global Average Pool&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #475569;&quot;&gt;1280-D per frame&lt;br&gt;(Batch, 30, 1280)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="475" y="277" width="120" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="top_seq_B" value="&lt;b&gt;Sequence Tensor&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; font-weight: bold; color: #0F172A;&quot;&gt;30 feature vectors&lt;br&gt;(Batch, 30, 1280)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="615" y="277" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="e_top_1_B" value="(Batch, 30, 128, 128, 3)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_input_B" target="top_effnet_B">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_top_2_B" value="(Batch, 30, 1280)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_effnet_B" target="top_gap_B">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_top_3_B" value="(Batch, 30, 1280)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_gap_B" target="top_seq_B">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bg_mid_B" value="TEMPORAL MODULE (DIFFERING COMPONENT  |  1.08 M params)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#93C5FD;strokeWidth=1.4;dashed=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontFamily=Helvetica;fontSize=8.5;fontStyle=1;fontColor=#1D4ED8;" vertex="1" parent="1">
+          <mxGeometry x="765" y="247" width="450" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="mid_core_B" value="&lt;b&gt;1-layer BiGRU&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #1E3A8A;&quot;&gt;128 units/dir (256 total), input_dim=1280  ⇄&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; font-weight: bold; color: #1D4ED8;&quot;&gt;[ 1.08 M params ]&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#1E3A8A;strokeColor=#1D4ED8;strokeWidth=1.8;fillColor=#EFF6FF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="785" y="277" width="190" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="mid_state_B" value="&lt;b&gt;Last Hidden State&lt;br&gt;(256-D)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #1E3A8A;&quot;&gt;(Batch, 256)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#1E3A8A;strokeColor=#1D4ED8;strokeWidth=1.8;fillColor=#EFF6FF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="277" width="150" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mid_in_B" value="(Batch, 30, 1280)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_seq_B" target="mid_core_B">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mid_core_to_state_B" value="(Batch, 30, 256)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="mid_core_B" target="mid_state_B">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mid_out_B" value="(Batch, 256)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="mid_state_B" target="bot_drop_B">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bot_drop_B" value="&lt;b&gt;Dropout&lt;br&gt;(rate = 0.4)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1325" y="277" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="bot_fc_B" value="&lt;b&gt;FC 256 &amp;rarr; 11&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #475569;&quot;&gt;Dense layer&lt;br&gt;(2,827 params)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1475" y="277" width="95" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="bot_softmax_B" value="&lt;b&gt;Softmax&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #475569;&quot;&gt;Posterior prob.&lt;br&gt;11 classes&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1595" y="277" width="85" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="bot_out_B" value="&lt;b&gt;11 classes&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #0F172A;&quot;&gt;Tai Phake digits&lt;br&gt;d0 (Pau) … d10 (Sip)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontStyle=1;fontColor=#0F172A;strokeColor=#0F172A;strokeWidth=1.5;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1705" y="277" width="115" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bot_1_B" value="(Batch, 256)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bot_drop_B" target="bot_fc_B">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bot_2_B" value="(Batch, 11)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bot_fc_B" target="bot_softmax_B">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bot_3_B" value="(Batch, 11)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bot_softmax_B" target="bot_out_B">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="summary_bottom_B" value="Total Parameters:&lt;br&gt;&lt;b&gt;6.40 M&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontStyle=1;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.4;fillColor=#F1F5F9;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1845" y="277" width="115" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row_C" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="395" width="2020" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="card_title_C" value="Model C&lt;br&gt;(Transformer)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11.5;fontStyle=1;fontColor=#0F172A;strokeColor=#1E293B;strokeWidth=1.6;fillColor=#F1F5F9;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="55" y="437" width="110" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="top_input_C" value="&lt;b&gt;Input Video Tensor&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #64748B;&quot;&gt;(Batch, 30, 128, 128, 3)&lt;br&gt;3-Ch RGB&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="185" y="437" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="top_effnet_C" value="&lt;b&gt;EfficientNet-B0&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #475569;&quot;&gt;Frame-level&lt;br&gt;ImageNet, frozen BN&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="330" y="437" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="top_gap_C" value="&lt;b&gt;Global Average Pool&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; color: #475569;&quot;&gt;1280-D per frame&lt;br&gt;(Batch, 30, 1280)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="475" y="437" width="120" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="top_seq_C" value="&lt;b&gt;Sequence Tensor&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8.5px; font-weight: bold; color: #0F172A;&quot;&gt;30 feature vectors&lt;br&gt;(Batch, 30, 1280)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="615" y="437" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="e_top_1_C" value="(Batch, 30, 128, 128, 3)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_input_C" target="top_effnet_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_top_2_C" value="(Batch, 30, 1280)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_effnet_C" target="top_gap_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_top_3_C" value="(Batch, 30, 1280)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_gap_C" target="top_seq_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="top_proj_C" value="&lt;b&gt;Input Projection&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #475569;&quot;&gt;1280 &amp;rarr; 256 for d_model&lt;br&gt;(Batch, 30, 256)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="760" y="437" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="e_top_4_C" value="(Batch, 30, 1280)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_seq_C" target="top_proj_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bg_mid_C" value="TEMPORAL MODULE (DIFFERING COMPONENT  |  1.58 M params)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#93C5FD;strokeWidth=1.4;dashed=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontFamily=Helvetica;fontSize=8.5;fontStyle=1;fontColor=#1D4ED8;" vertex="1" parent="1">
+          <mxGeometry x="905" y="407" width="400" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="mid_pos_C" value="&lt;b&gt;Positional Encoding&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #1E3A8A;&quot;&gt;Learnable (L=30)&lt;br&gt;(Batch, 30, 256)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#1E3A8A;strokeColor=#1D4ED8;strokeWidth=1.8;fillColor=#EFF6FF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="920" y="437" width="115" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="mid_trans_C" value="&lt;b&gt;Transformer Encoder ×2&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #1E3A8A;&quot;&gt;d_model=256, 4 heads, FFN=1024, Pre-LN&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; font-weight: bold; color: #1D4ED8;&quot;&gt;[ 1.58 M params ]&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#1E3A8A;strokeColor=#1D4ED8;strokeWidth=1.8;fillColor=#EFF6FF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1055" y="437" width="130" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="mid_pool_C" value="&lt;b&gt;Mean Pool&lt;br&gt;(30 tokens)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #1E3A8A;&quot;&gt;(Batch, 256)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#1E3A8A;strokeColor=#1D4ED8;strokeWidth=1.8;fillColor=#EFF6FF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1205" y="437" width="90" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mid_in_C" value="(Batch, 30, 256)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="top_proj_C" target="mid_pos_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mid_pos_to_trans_C" value="(Batch, 30, 256)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="mid_pos_C" target="mid_trans_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mid_trans_to_pool_C" value="(Batch, 30, 256)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="mid_trans_C" target="mid_pool_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mid_out_C" value="(Batch, 256)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="mid_pool_C" target="bot_drop_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bot_drop_C" value="&lt;b&gt;Dropout 0.1 (Attn/FFN)&lt;br&gt;+ 0.2 (Head)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1325" y="437" width="125" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="bot_fc_C" value="&lt;b&gt;FC 256 &amp;rarr; 11&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #475569;&quot;&gt;Dense layer&lt;br&gt;(2,827 params)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1475" y="437" width="95" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="bot_softmax_C" value="&lt;b&gt;Softmax&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #475569;&quot;&gt;Posterior prob.&lt;br&gt;11 classes&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1595" y="437" width="85" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="bot_out_C" value="&lt;b&gt;11 classes&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px; color: #0F172A;&quot;&gt;Tai Phake digits&lt;br&gt;d0 (Pau) … d10 (Sip)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontStyle=1;fontColor=#0F172A;strokeColor=#0F172A;strokeWidth=1.5;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1705" y="437" width="115" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bot_1_C" value="(Batch, 256)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bot_drop_C" target="bot_fc_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bot_2_C" value="(Batch, 11)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bot_fc_C" target="bot_softmax_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bot_3_C" value="(Batch, 11)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;whiteSpace=wrap;strokeColor=#475569;strokeWidth=1.2;fontFamily=Helvetica;fontSize=8;fontColor=#334155;fontStyle=2;labelBackgroundColor=#FFFFFF;labelBorderColor=none;endArrow=classic;endSize=5;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bot_softmax_C" target="bot_out_C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="summary_bottom_C" value="Total Parameters:&lt;br&gt;&lt;b&gt;6.90 M&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontStyle=1;fontColor=#0F172A;strokeColor=#334155;strokeWidth=1.4;fillColor=#F1F5F9;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1845" y="437" width="115" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="loss_objective" value="&lt;b&gt;Training Objective:&lt;/b&gt; Class-weighted Cross-Entropy Loss + Label Smoothing (ε=0.1)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10.5;fontStyle=1;fontColor=#0F172A;strokeColor=#475569;strokeWidth=1.2;fillColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="560" width="2020" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="fig_legend" value="&lt;i&gt;Note: All three architectures share an identical training recipe (AdamW, Cosine Annealing, 5-fold speaker-independent GroupKFold, 3 seeds/fold). The highlighted temporal block is visually and empirically the only architectural difference.&lt;/i&gt;" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=10.5;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="40" y="605" width="2020" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
