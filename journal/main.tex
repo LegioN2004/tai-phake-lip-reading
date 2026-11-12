@@ -102,7 +102,6 @@ The extracted mouth images were resized to three tested resolutions: $96 \times 
 Data augmentation was applied to increase data diversity and reduce overfitting \cite{shorten2019survey}. Small transformations were used to preserve important lip features and movements. Translation was limited to $\pm3$ pixels, rotation to $\pm3^\circ$, and scaling to 0.97--1.03. Contrast ranged from 0.92--1.08, while brightness ranged from $-10$ to $+10$. Gaussian noise ($\sigma = 1.0$--$3.5$) was applied with a 50\% probability. Gaussian blur used a $3 \times 3$ kernel with $\sigma = 0.5$ and a 30\% probability. Border reflection was used to handle image boundaries, and JPEG quality was set to 95. These small changes increased data variation while preserving the visual information needed for recognition.
 After data preprocessing, Section IV presents the proposed models used for Tai Phake visual speech recognition.
 \begin{table}[!t]
-    \caption{Phakial digits, their transliteration and the number of samples}
     \centering
     \begin{tabular}{c|c|c}
 
@@ -120,7 +119,9 @@ After data preprocessing, Section IV presents the proposed models used for Tai P
         9              & Kao                      & 80                      \\
         10             & Sip                      & 80                      \\
     \end{tabular}
-    \vspace{0.5cm}
+    \vspace{0.3cm}
+    \caption{Phakial digits, their transliteration and the number of samples}
+    \vspace{-0.5cm}
 
     \label{taiphake_digits}
 \end{table}

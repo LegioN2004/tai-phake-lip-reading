@@ -23,6 +23,10 @@
 *.m4a
 *.jpg
 *.zip
+*.synctex.gz
+*.aux
+*.log
+*.pdf
 
 # Frame and image files in data directories
 data/*
@@ -168,3 +172,4 @@ journal/out/main.fdb_latexmk
 journal/out/main.fls
 journal/out/main.log
 journal/out/main.pdf
+journal/out/main.synctex.gz
